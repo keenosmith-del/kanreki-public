@@ -1,5 +1,5 @@
 import {introduction,secondDescription,p,keys,mix,typed} from './timeline';
-import {Avatar,Wordmark,asset,ink,Caret} from './ui';
+import {Avatar,Wordmark,asset,ink,Caret,RoundedSentence} from './ui';
 import {linesFor} from './text';
 import manifest from '../assets.json';
 export function Opening({t}:{t:number}) {
@@ -15,9 +15,9 @@ export function Opening({t}:{t:number}) {
   return <>
     {/* The clip edge stays attached to the icon. Text never exits the viewport. */}
     {t<3.05&&<div data-opening-layer="wordmark" style={{position:'absolute',left:anchor+65,top:455,width:760,height:185,overflow:'hidden'}}><div style={{paddingLeft:35,transform:`translateX(${mix(-780,0,word)}px)`,whiteSpace:'nowrap'}}><Wordmark size={150}/></div></div>}
-    {t>=3&&t<7&&<div data-opening-layer="first-description" style={{position:'absolute',left:anchor+65,top:441,width:1390,height:240,overflow:'hidden'}}><div style={{width:1320,paddingLeft:40,fontSize:74,fontWeight:500,letterSpacing:-2.8,lineHeight:1.23,transform:`translateX(${mix(-1400,0,first)}px)`}}>{introduction}</div></div>}
+    {t>=3&&t<7&&<div data-opening-layer="first-description" style={{position:'absolute',left:anchor+65,top:441,width:1390,height:240,overflow:'hidden'}}><div style={{width:1320,paddingLeft:40,fontSize:74,fontWeight:500,letterSpacing:-2.8,lineHeight:1.23,transform:`translateX(${mix(-1400,0,first)}px)`}}><RoundedSentence text={introduction}/></div></div>}
     {t>=7&&t<11.95&&<div data-opening-layer="typed-description" style={{position:'absolute',left:anchor+65,top:441,width:1390,height:250,overflow:'hidden'}}><div style={{width:1320,paddingLeft:40,fontSize:74,fontWeight:500,letterSpacing:-2.8,lineHeight:1.3,transform:`translateX(${secondShift}px)`}}>
-      {secondLines.map((line,i)=>{const a=offset;offset+=line.length;const text=typedSecond.slice(a,offset);return <div key={i} style={{height:96.2,whiteSpace:'pre'}}>{text}{typedSecond.length>=a&&typedSecond.length<offset&&t<10.5&&<Caret t={t} typing/>}</div>;})}
+      {secondLines.map((line,i)=>{const a=offset;offset+=line.length;const text=typedSecond.slice(a,offset);return <div key={i} style={{height:96.2,whiteSpace:'pre'}}><RoundedSentence text={text}/>{typedSecond.length>=a&&typedSecond.length<offset&&t<10.5&&<Caret t={t} typing/>}</div>;})}
     </div></div>}
     <div style={{position:'absolute',left:anchor-size/2,top:cy-size/2,width:size,height:size,zIndex:4,borderRadius:'50%',overflow:'hidden',background:'#fff'}}>
       <img src={asset('icon')} alt="kanreki icon" style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'contain',opacity:1-avatar,filter:`brightness(${1+Math.sin(p(t,.08,.45)*Math.PI)*.28})`}}/>

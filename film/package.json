@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "render:revision-02": "node render-revision-02.mjs",
-    "render:revision-03": "node render-revision-03.mjs"
+    "render:revision-03": "node render-revision-03.mjs",
+    "render:revision-04": "node render-revision-04.mjs"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.541",

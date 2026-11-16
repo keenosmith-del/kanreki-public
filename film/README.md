@@ -1,4 +1,5 @@
-> Current production: [Revision 03](REVISION-03.md), a 60-second / 1080p60 film integrated into Section 1 with an account-access CTA after first playback. The earlier workflow below is historical.
+> Current production: [Revision 04](REVISION-04.md), with smoother camera tracking, richer post editing and a white canvas blend. Earlier workflows below are historical.
+
 
 
 

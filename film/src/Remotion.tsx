@@ -13,4 +13,4 @@ function Film(){
  },[handle]);
  return <AbsoluteFill><style>{'*{box-sizing:border-box}html,body{margin:0;background:white}h2,p{margin-top:0}'}</style><Hero frame={frame}/></AbsoluteFill>;
 }
-registerRoot(()=> <Composition id="KanrekiHeroRevision03" component={Film} width={1920} height={1080} fps={FPS} durationInFrames={FRAMES}/>);
+registerRoot(()=> <Composition id="KanrekiHeroRevision04" component={Film} width={1920} height={1080} fps={FPS} durationInFrames={FRAMES}/>);

@@ -17,10 +17,10 @@ The video component requests `play()` once on loaded data, sets muted/playsInlin
 
 ## Section 1 cinematic hero implementation
 
-The introduction now has editable React film source and rendering tools in `film/`. See `film/REVISION-03.md` for the current production and verification. Its intended production paths are `public/media/kanreki-hero.mp4`, `kanreki-hero.webm`, `kanreki-hero-poster.png` and `kanreki-hero-mobile.png`.
+The introduction now has editable React film source and rendering tools in `film/`. See `film/REVISION-04.md` for the current production and verification. Its intended production paths are `public/media/kanreki-hero.mp4`, `kanreki-hero.webm`, `kanreki-hero-poster.png` and `kanreki-hero-mobile.png`.
 
 The introduction uses `loop: true`. The other five media manifests retain their existing values. Production paths are activated in `src/hero-production.json` after successful full-render validation. No broken production URLs are emitted while files are absent.
 
 The accessible heading and text fallback stay available. The single native “account access” CTA is outside the film, occupies reserved space, and reveals after the first observed playback wrap. It links to the existing `/create-account` route and stays visible on later loops. Reduced motion, mobile static fallback, missing/failed media and rejected autoplay expose account actions immediately. A startup timeout handles a source that never starts. Header account links remain immediately available and the account pages remain restricted.
 
-The source and supplied assets pass local validation. The rendering restriction was resolved using the current unrestricted execution session and the proven Remotion/Chrome workflow. The rejected 72-second film and the earlier 53-second render remain preserved outside production assets. Revision 03 slows only the opening, adds the named welcome, and synchronizes avatar travel with the camera pull-back.
+The source and supplied assets pass local validation. The rendering restriction was resolved using the current unrestricted execution session and the proven Remotion/Chrome workflow. The rejected 72-second film and the earlier 53-second render remain preserved outside production assets. Revision 04 preserves the slower opening and named welcome, smooths camera and line-wrap tracking, adds the referenced feed controls and richer post editing, and blends the video perimeter into the white page canvas.

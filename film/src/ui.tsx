@@ -9,7 +9,10 @@ export function Avatar({person='primary',size=48}:{person?:Person;size?:number})
 export function Wordmark({size=140,dot=true}:{size?:number;dot?:boolean}) {
   return <span role="img" aria-label="kanreki." style={{fontFamily:'"Helvetica Neue", Helvetica, Arial, sans-serif',fontSize:size,fontWeight:500,letterSpacing:'-.07em',display:'inline-flex',alignItems:'baseline',lineHeight:1}}>kanreki{dot&&<span style={{width:size*3/28,height:size*3/28,borderRadius:'50%',background:'currentColor',marginLeft:size*2/28,flexShrink:0}}/>}</span>;
 }
-export type IconName = 'home'|'pen'|'compass'|'bookmark'|'heart'|'settings'|'search'|'bell'|'message'|'share'|'arrow'|'close'|'image'|'check'|'bold'|'italic'|'underline'|'heading'|'link'|'list'|'align'|'quote';
+export function RoundedSentence({text}:{text:string}){
+ return <>{text.split('.').map((part,i,parts)=><span key={i}>{part}{i<parts.length-1&&<span aria-label="." role="img" style={{display:'inline-block',width:'.09em',height:'.09em',borderRadius:'50%',background:'currentColor',marginLeft:'.04em',marginRight:'.02em',verticalAlign:'baseline'}}/>}</span>)}</>;
+}
+export type IconName = 'home'|'pen'|'compass'|'bookmark'|'heart'|'settings'|'search'|'bell'|'message'|'share'|'arrow'|'close'|'image'|'check'|'bold'|'italic'|'underline'|'heading'|'link'|'list'|'align'|'quote'|'thumbDown'|'repost'|'more';
 export function Icon({name,size=28,filled=false}:{name:IconName;size?:number;filled?:boolean}) {
   const paths:Record<IconName,ReactNode>={
     bold:<path d="M7 4h7a4 4 0 0 1 0 8H7m0-8v16h8a4 4 0 0 0 0-8H7"/>,
@@ -29,7 +32,10 @@ export function Icon({name,size=28,filled=false}:{name:IconName;size?:number;fil
     search:<><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></>,
     bell:<><path d="M5 17h14l-2-4V9a5 5 0 0 0-10 0v4ZM10 21h4"/></>,
     message:<path d="M21 11.5a9 9 0 0 1-9 9c-1.5 0-3-.3-4.3-1L3 21l1.5-4.7A9 9 0 1 1 21 11.5Z"/>,
-    share:<><path d="M4 9h13l-4-4M20 15H7l4 4M17 5l4 4-4 4M7 11l-4 4 4 4"/></>,
+    share:<><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4m-6.8 7 6.8 4"/></>,
+    repost:<><path d="m3 7 4-4 4 4M7 3v12a3 3 0 0 0 3 3h3m8-1-4 4-4-4m4 4V9a3 3 0 0 0-3-3h-3"/></>,
+    thumbDown:<><path d="M15 14v5a3 3 0 0 1-3 3l-4-9V2h10a2 2 0 0 1 2 1.7l1 7A3 3 0 0 1 18 14ZM8 2H3v11h5"/></>,
+    more:<><circle cx="4" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="20" cy="12" r="1.2" fill="currentColor" stroke="none"/></>,
     arrow:<path d="M4 12h16m-6-6 6 6-6 6"/>, close:<path d="m6 6 12 12M6 18 18 6"/>,
     image:<><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1"/><path d="m3 17 5-5 4 4 4-6 5 7"/></>,
     check:<path d="m5 12 4 4L19 6"/>,

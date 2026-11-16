@@ -15,12 +15,12 @@
     "test:browser": "playwright test",
     "check:build": "node scripts/check-build.mjs",
     "film:assets": "node film/validate-assets.mjs",
-    "film:stills": "node film/render-revision-03.mjs stills",
+    "film:stills": "node film/render-revision-04.mjs stills",
     "film:proof": "node film/render.mjs proof",
-    "film:master": "node film/render-revision-03.mjs video",
-    "film:export": "node film/export-revision-03.mjs",
+    "film:master": "node film/render-revision-04.mjs video",
+    "film:export": "node film/export-revision-04.mjs",
     "film:review": "node film/review.mjs",
-    "film:activate": "node film/integrate-revision-03.mjs",
+    "film:activate": "node film/integrate-revision-04.mjs",
     "film:local": "node film/local.mjs",
     "film:opening": "node film/render.mjs opening",
     "film:interface": "node film/render.mjs interface",
@@ -31,7 +31,10 @@
     "film:revision03": "node film/render-revision-03.mjs all",
     "film:export:revision03": "node film/export-revision-03.mjs",
     "film:integrate:revision03": "node film/integrate-revision-03.mjs",
-    "film:typecheck": "tsc --noEmit -p film/tsconfig.json"
+    "film:typecheck": "tsc --noEmit -p film/tsconfig.json",
+    "film:revision04": "node film/render-revision-04.mjs all",
+    "film:export:revision04": "node film/export-revision-04.mjs",
+    "film:integrate:revision04": "node film/integrate-revision-04.mjs"
   },
   "dependencies": {
     "react": "19.2.7",

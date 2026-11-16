@@ -3,7 +3,7 @@ import {createReadStream} from 'node:fs';
 import {stat} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {join,extname,resolve} from 'node:path';
-const revision=process.argv[2]||'03';
+const revision=process.argv[2]||'04';
 const root=fileURLToPath(new URL(`./output/revision-${revision}/`,import.meta.url));
 const server=createServer(async(req,res)=>{
  try{
