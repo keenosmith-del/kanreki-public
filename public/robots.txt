@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://insider.kailor.co.za/sitemap.xml
+# Indexing is disabled by HTML and X-Robots-Tag on every route.
+# Crawling remains allowed so search engines can read noindex.

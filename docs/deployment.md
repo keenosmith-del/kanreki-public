@@ -1,40 +1,32 @@
-# Cloudflare Pages deployment
+# kanreki Cloudflare Pages deployment
 
-Prepared configuration: a separate Pages project connected to `keenosmith-del/kailor-insider-public`. Do not reuse kailor's existing Pages project. No deployment or resource provisioning has been performed.
-
-## Build
+This repository remains the independent static public site. The existing GitHub repository is still `keenosmith-del/kailor-insider-public`; renaming it is a separate owner action. No deployment, repository rename or DNS change has been made.
 
 | Setting | Value |
 | --- | --- |
 | Framework | Vite / static frontend |
 | Repository root | `/` |
 | Build command | `npm run build` |
-| Output directory | `dist` |
+| Output | `dist` |
 | Node | 24; minimum 22.12 |
-| Runtime environment variables | None |
+| Build URL | `SITE_URL`, otherwise Cloudflare’s `CF_PAGES_URL` |
+| Runtime services | None |
 
-`npm ci` installs the lockfile. The build prerenders eight route documents and the custom 404, generates sitemap.xml from indexable routes, and replaces the JSON-LD CSP hash in emitted `_headers`. Upload the entire `dist` directory if using direct upload. Never upload the source tree or node_modules. No Worker, Pages Function, database or API is needed.
+`SITE_URL` is an optional explicit deployed HTTPS origin. `CF_PAGES_URL` automatically uses the current Pages deployment hostname when available; leave `SITE_URL` unset for per-deployment canonicals. Both reject paths, queries, fragments and credentials. If neither is supplied, the build omits canonical and Open Graph URL tags rather than inventing a live hostname. The same origin is compiled into client routing metadata and prerendered HTML/JSON-LD.
 
-## Preview before public launch
+All routes stay `noindex, follow` in HTML and `X-Robots-Tag`. robots.txt permits crawling so engines can see noindex; no sitemap is advertised, and sitemap.xml intentionally contains zero URLs. Setting a hostname never enables indexing. Removing indexing restrictions requires a separate reviewed source change when the final domain strategy is ready.
 
-1. Run `npm ci`, `npm test`, `npm run build`, `npm run check:build`, and `npm run test:browser` in an environment with Chromium and loopback access.
-2. Review draft privacy, terms and cookie notices with the owner/legal reviewer. Confirm the actual hosting request logs, security cookies, retention and contact handling. Remove review labels and change indexing only once approved, through a separate source change.
-3. Authorise and create a separate Pages project. Verify its preview at the Pages-provided address. Preview deployments should be excluded from indexing using Cloudflare deployment settings or access controls. Canonicals intentionally target the final domain.
-4. Test direct requests and reloads to all eight routes, unknown URLs, `/api/users`, `/.env`, and `/src/main.tsx`. Unknown/private-looking URLs must return the custom 404 with HTTP 404. Do not add `/* /index.html 200`.
-5. Inspect response headers. Confirm CSP, nosniff, Permissions-Policy and Referrer-Policy. Check no CSP errors, missing assets or credential POST requests. HTML revalidates; only fingerprinted `/assets/*` is immutable.
-6. Check 1440, 1280, 768, 390 and 320px widths, menu keyboard handling, account switches, short desktop height, mailto fallback and legal links. Test reduced motion and a no-JavaScript load.
+## Independent preview after separate deployment authorisation
 
-## Domain and HTTPS — separate owner authorisation required
+1. Run `npm ci`, `npm run typecheck`, `npm test`, `npm run build`, `npm run check:build` and `npm run test:browser`. Browser checks require Chromium and permission to open a loopback port.
+2. Use a separate Pages project; do not reuse kailor’s project or the publishing application’s project. Upload only `dist` for direct uploads.
+3. Verify all eight routes, direct refreshes, the custom HTTP 404, `/url-icon.png`, response headers and noindex. There is no API or authentication service. Never add a catch-all SPA rewrite.
+4. Inspect desktop/mobile screenshots, keyboard navigation, disabled forms, console errors and reduced motion. Review legal drafts and actual hosting behaviour before launch.
 
-1. Attach only `insider.kailor.co.za` to the new Pages project after approval. Use Cloudflare's displayed domain instructions and verify any existing record before changing it.
-2. Do not change apex `kailor.co.za`, existing Pages settings, Zoho/mail records, the consultancy backend, or Insider application resources. Do not attach or link the future `app.insider.kailor.co.za` yet.
-3. Verify TLS certificate issuance, HTTPS response, redirect behaviour, all route canonicals, favicon and sitemap. Confirm no mixed content.
-4. Submit `https://insider.kailor.co.za/sitemap.xml` after owner launch approval. It contains home, About and contact only. Do not promise any particular Google relationship panel.
+## Future domains
 
-## Rollback
+`https://kanreki.co.za` is planned but is not owned or connected. `https://app.kanreki.co.za` is the intended application address and is likewise unconnected. Do not attach either, create DNS records, publish live application links or enable indexing as part of this rebrand. No changes to kailor.co.za, mail records or either other repository are authorised.
 
-Record the approved source commit and Pages deployment ID. Roll back to the preceding known-good deployment in the **new Insider public** Pages project if checks fail. Recheck domain, TLS, routes and headers after rollback. Do not change another project's deployment or DNS as part of rollback.
+When separately authorised and actually connected, set `SITE_URL` to the verified public origin and review canonical tags, structured data, redirects and sitemap/indexing policy. The application remains separately deployed; public account forms stay disabled until it is ready.
 
-## Future reciprocal relationship link
-
-A future approved change on kailor.co.za could add a natural `kailor insider` link to this site's About page or homepage. It should describe a publishing platform from the same team, without treating the two brands as `sameAs` or asserting subsidiary status. No change has been made to kailor.
+For rollback, record the approved source commit and deployment ID and restore only this public site’s previous deployment. Never change another project or DNS as part of rollback.

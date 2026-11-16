@@ -17,7 +17,7 @@ The video component requests `play()` once on loaded data, sets muted/playsInlin
 
 ## Iteration 002 — introduction only
 
-1. Reinspect the real Insider interface and confirm the approved opening story; use real code-rendered platform views and neutral demonstration content. Do not claim public availability.
+1. Reinspect the real kanreki interface and confirm the approved opening story; use real code-rendered platform views and neutral demonstration content. Do not claim public availability.
 2. Build only Section 1's cinematic sequence, matching kailor's camera movement, zooms and monochrome typography. Keep the final message readable on mobile. No consultancy claims, mascot, decorative arrows or fabricated interactions.
 3. Encode the approved film and static fallback. Supply actual assets and check sizes/duration/decoding before adding manifest paths.
 4. Set `src`, `poster`, `loop:false` for introduction. Preserve six sections and retain a semantic introduction heading when the visual fallback is replaced.

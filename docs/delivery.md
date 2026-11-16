@@ -1,75 +1,42 @@
-# Iteration 001 implementation delivery
+# kanreki rebrand delivery — 16 November 2026
 
-## Outcome
+The standalone public site now uses `kanreki` and the `kanreki.` wordmark throughout. All six homepage sections, their placeholder assets, dimensions and playback implementation remain. No films were created. Account forms remain disabled. About and structured data record establishment in 2020; publication copy covers articles, images and social participation beyond AI and technology. Writing assistance remains explicitly planned.
 
-Implemented the independent static public website. Six permanent homepage sections reserve the final media, while the hero and closing use complete static typographic compositions. Eight routes, restricted account pages, publication-specific draft legal information and a custom 404 are present. React Router provides client navigation; the production build also emits meaningful route HTML without JavaScript.
+The period uses the kailor reference’s circular geometry, with existing typography, responsive sizing, monochrome colours and interface layouts retained. The original supplied Downloads/url-icon.png was copied byte-for-byte to public/url-icon.png; the old SVG was removed. No generated substitute or image conversion was used.
 
-Shared presentational code lives under `src/components`; route content under `src/pages`; styling under `src/styles`; future asset configuration in `src/media.ts`; canonical identity in `src/seo.ts`. Build/deployment concerns remain in `scripts` and `public`. There are no imports from either reference project and no backend.
+## Modified files
 
-## Exact source file inventory
+| Files | Change |
+| --- | --- |
+| `src/components/Brand.tsx` | Shared kanreki wordmark and accessible home label |
+| `src/components/Navigation.tsx` | Footer copyright identity; consultancy links retained |
+| `src/pages/Home.tsx` | Publishing/social messaging and public access disclosure |
+| `src/pages/Information.tsx` | About, 2020 establishment, contact subject/disclosure and legal brand references |
+| `src/pages/Auth.tsx` | Brand/access labels; both forms remain disabled |
+| `src/media.ts` | Introduction accessibility description only |
+| `src/styles/global.css` | Circular terminal period matching the reference |
+| `src/styles/navigation.css` | Brand name in internal comment |
+| `src/seo.ts` | Titles, descriptions, kanreki publisher, 2020 founding date, configurable origin and noindex |
+| `src/App.tsx` | Canonical/Open Graph URL lifecycle, including absent origins and unknown routes |
+| `vite.config.ts` | Validate and share SITE_URL / CF_PAGES_URL between SSR and client |
+| `scripts/build.ts` | Prerendered brand metadata, optional URLs, empty sitemap while indexing is disabled |
+| `scripts/check-build.mjs` | Brand, icon, publisher/year, URL, indexing and stale-reference checks |
+| `scripts/serve.mjs` | PNG MIME type and preview noindex header |
+| `index.html` | PNG favicon declaration |
+| `public/_headers`, `public/robots.txt` | Global noindex response header; crawl allowed to read it; no advertised sitemap |
+| `public/url-icon.png` (added), `public/favicon.svg` (removed) | Exact supplied icon replaces old favicon |
+| `package.json`, `package-lock.json` | Local package identity kanreki-public; no dependency changes |
+| `tests/app.test.tsx`, `tests/browser/site.spec.ts` | Brand, publisher, founding year, noindex, configured/absent canonicals, icon and console checks |
+| `README.md`, `docs/deployment.md` | Current brand, deployment configuration and future domain boundaries |
+| `docs/reference-audit.md`, `docs/media.md` | Reference check and future introduction instructions updated |
+| `docs/verification.md`, `docs/delivery.md` | Current results, complete file inventory and outstanding checks |
 
-Modified: `README.md`.
+## Remaining references and boundaries
 
-Created:
+No previous publishing name remains in production output. The old repository slug remains in deployment documentation solely to identify the unchanged GitHub repository; stale-name rejection patterns remain in the build verifier. Historical Git data and the local checkout path naturally retain the previous repository name. References to kailor’s consultancy, LinkedIn company page and existing contact email remain intentionally.
 
-```text
-.gitignore
-.node-version
-index.html
-package.json
-package-lock.json
-tsconfig.json
-vite.config.ts
-vitest.config.ts
-playwright.config.ts
-src/App.tsx
-src/main.tsx
-src/entry-server.tsx
-src/media.ts
-src/seo.ts
-src/components/Brand.tsx
-src/components/Navigation.tsx
-src/components/MediaSlot.tsx
-src/pages/Home.tsx
-src/pages/Auth.tsx
-src/pages/Information.tsx
-src/styles/global.css
-src/styles/navigation.css
-src/styles/auth.css
-public/_headers
-public/robots.txt
-public/favicon.svg
-public/fonts/inter.woff2
-public/fonts/LICENSE.txt
-scripts/build.ts
-scripts/check-build.mjs
-scripts/serve.mjs
-tests/setup.ts
-tests/app.test.tsx
-tests/browser/site.spec.ts
-docs/deployment.md
-docs/media.md
-docs/reference-audit.md
-docs/verification.md
-docs/delivery.md
-```
+No other repository was modified, and no publishing backend, auth, credentials or database were imported. There was no commit, push, deployment, repository rename or DNS change. Planned kanreki.co.za and app.kanreki.co.za domains remain unconnected and do not appear as live canonical or application links.
 
-Generated, ignored output: `dist/` (eight HTML route documents, `404.html`, sitemap, security headers, favicon/font and fingerprinted CSS/JS). Installed dependencies and browser failure artifacts are ignored.
+## Next step
 
-## Parity and remaining differences
-
-Source values for navigation, footer, typography, spacing and account layouts were retained/adapted. The current GitHub main homepage matched the local reference inspected. Live pixel comparison could not be completed. Intentional differences and exact source measurements are in `reference-audit.md`.
-
-No final films/screenshots are included. Longer-wordmark mobile sizing and compact short-desktop account styles are implemented but require rendered verification. All four editorial sections keep text left/media right as specified. Review-pending legal content uses document routes. Static copy remains visible rather than scroll-fading without media.
-
-## Validation and deployment
-
-Clean installation, TypeScript, 19 component tests, production build and build audit passed. Browser tests were blocked by sandbox refusal to listen on loopback; screenshots, rendered responsiveness and HTTP refresh/status checks remain unverified. The build's React Router `use client` directive warning is non-fatal in this client-only frontend.
-
-The static build is prepared for a separate Cloudflare Pages project using `npm run build` and output `dist`. See `deployment.md`. Full iteration acceptance remains pending browser/visual verification. Changes remain uncommitted and unpushed.
-
-Before public release: run/inspect browser verification, obtain owner/legal approval of notices, and obtain separate owner authorisation for hosting resources and domain activation. No existing kailor/Insider resources or DNS were changed.
-
-## Next iteration
-
-After visual acceptance, create only the introduction film from the real platform interface; supply the approved static fallback; bind the introduction media source with `loop:false`; verify one play, final-frame hold, static/error fallbacks and no replay on unrelated renders. The detailed sequence and media dimensions are in `media.md`. Keep all other media slots deferred.
+The rebrand implementation is ready for Section 1 development. Before declaring visual acceptance, run the browser suite outside the restricted execution sandbox and inspect its desktop/mobile screenshots. Keep all six media slots until the first approved introduction film and poster are supplied. See verification.md and media.md.

@@ -1,6 +1,6 @@
-# kailor insider — public website
+# kanreki — public website
 
-Independent React + TypeScript + Vite static frontend for `https://insider.kailor.co.za/`. No database, API, live authentication, analytics or embedded third-party services. The publication application is separate and public access remains restricted.
+Independent React + TypeScript + Vite static frontend for kanreki, established in 2020. No database, API, live authentication, analytics or embedded third-party services. The publication application is separate and public access remains restricted.
 
 Use Node 24 (minimum 22.12). From this repository:
 
@@ -31,12 +31,12 @@ Open `http://127.0.0.1:4173`. Vite's development server is for development; the 
 - `src/media.ts`: six asset-free slots; no nonexistent asset requests.
 - `src/seo.ts`: canonical metadata and real publisher relationship.
 - `scripts/build.ts`: Vite build, route prerendering, CSP hash and sitemap generation.
-- `public/`: favicon, licensed Inter font, robots and security/cache headers.
+- `public/`: exact supplied `url-icon.png`, licensed Inter font, robots and security/cache headers.
 - `tests/`: route/navigation/restriction/media tests and responsive production browser checks.
 - `docs/`: source comparison, feature evidence, deferred media and deployment runbook.
 
 Direct requests receive meaningful HTML without JavaScript. The build emits `/`, `/about`, `/contact`, `/sign-in`, `/create-account`, `/privacy`, `/terms`, `/cookies` and `404.html`. Cloudflare Pages uses the top-level `404.html` for unknown URLs; do not add a catch-all SPA rewrite. There is no `/api` service.
 
-Homepage, About and contact are indexable. Restricted account routes and draft legal information are `noindex, follow` and excluded from the generated sitemap. Review legal drafts and infrastructure behaviour before public launch.
+All routes are `noindex, follow` in HTML and response headers. The sitemap intentionally contains no URLs. Set build-time `SITE_URL` to the actual deployed HTTPS origin, or let Cloudflare’s `CF_PAGES_URL` supply the deployment hostname. Without either value, canonical and Open Graph URL tags are omitted. The planned `https://kanreki.co.za` and `https://app.kanreki.co.za` domains are not connected or linked as live services. Indexing requires a separate reviewed source change.
 
-See [deployment](docs/deployment.md), [reference audit](docs/reference-audit.md), [media manifest](docs/media.md) and [verification](docs/verification.md). No hosting resources, DNS, existing kailor website or Insider application are changed by this implementation.
+See [deployment](docs/deployment.md), [reference audit](docs/reference-audit.md), [media manifest](docs/media.md) and [verification](docs/verification.md). No hosting resources, DNS, existing kailor website or kanreki application are changed by this implementation.

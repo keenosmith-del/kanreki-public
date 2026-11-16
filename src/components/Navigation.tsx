@@ -60,7 +60,7 @@ export function Header() {
   </header>;
 }
 export function LegalRow() {
-  return <div className="site-footer-bottom"><span>© {new Date().getFullYear()} kailor insider</span><nav className="site-footer-legal" aria-label="legal">{['privacy', 'terms', 'cookies'].map(p => <Link key={p} to={`/${p}`}>{p}</Link>)}</nav></div>;
+  return <div className="site-footer-bottom"><span>© {new Date().getFullYear()} kanreki</span><nav className="site-footer-legal" aria-label="legal">{['privacy', 'terms', 'cookies'].map(p => <Link key={p} to={`/${p}`}>{p}</Link>)}</nav></div>;
 }
 export function Footer({ auth = false }: { auth?: boolean }) {
   if (auth) return <footer className="site-footer auth-footer"><div className="site-footer-inner"><LegalRow /></div></footer>;

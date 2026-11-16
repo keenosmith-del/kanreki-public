@@ -3,9 +3,9 @@ import { Brand } from '../components/Brand';
 import { Footer } from '../components/Navigation';
 export function Auth({ signup = false }: { signup?: boolean }) {
   return <div className="auth-layout"><header className="site-header auth-header"><div className="site-header-row"><Brand linked className="site-header-brand" /></div></header>
-    <div className="auth-body"><aside className="auth-animation" aria-label="kailor insider"><div><Brand /><p>Read. Write. Share.</p></div></aside>
+    <div className="auth-body"><aside className="auth-animation" aria-label="kanreki"><div><Brand /><p>Read. Write. Share.</p></div></aside>
       <main className="auth-panel" id="main-content" tabIndex={-1}><div className="auth-container" key={signup ? 'signup' : 'signin'}><header className="auth-intro"><h1>{signup ? 'create account' : 'sign in'}</h1><p>{signup ? 'your own space to publish.' : 'a place for your perspectives.'}</p></header>
-        <p className="auth-restriction" id="access-notice">{signup ? 'Account creation is currently restricted. Public registration will become available when access opens.' : 'Access to kailor insider is currently restricted. The publication application is not yet available for public sign-in.'}</p>
+        <p className="auth-restriction" id="access-notice">{signup ? 'Account creation is currently restricted. Public registration will become available when access opens.' : 'Access to kanreki is currently restricted. The publication application is not yet available for public sign-in.'}</p>
         <form className="auth-form" onSubmit={e => e.preventDefault()} aria-describedby="access-notice" autoComplete="off"><fieldset disabled>
           {signup && <div className="auth-field"><label htmlFor="full-name">full name</label><input id="full-name" type="text" placeholder="your name" autoComplete="off" /></div>}
           <div className="auth-field"><label htmlFor="email">email</label><input id="email" type="email" placeholder="you@example.com" autoComplete="off" /></div>

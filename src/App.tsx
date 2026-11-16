@@ -14,8 +14,18 @@ function PageEffects() {
     document.title = metadata.title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', metadata.description);
     document.querySelector('meta[name="robots"]')?.setAttribute('content', metadata.index ? 'index, follow' : 'noindex, follow');
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonical(pathname));
-    for (const [property, value] of Object.entries({ 'og:title': metadata.title, 'og:description': metadata.description, 'og:url': canonical(pathname), 'twitter:title': metadata.title, 'twitter:description': metadata.description })) document.querySelector(`meta[property="${property}"],meta[name="${property}"]`)?.setAttribute('content', value);
+    const url = canonical(pathname);
+    let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (url) {
+      if (!link) { link = document.createElement('link'); link.rel = 'canonical'; document.head.append(link); }
+      link.href = url;
+    } else link?.remove();
+    let ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (url) {
+      if (!ogUrl) { ogUrl = document.createElement('meta'); ogUrl.setAttribute('property', 'og:url'); document.head.append(ogUrl); }
+      ogUrl.content = url;
+    } else ogUrl?.remove();
+    for (const [property, value] of Object.entries({ 'og:title': metadata.title, 'og:description': metadata.description, 'twitter:title': metadata.title, 'twitter:description': metadata.description })) document.querySelector(`meta[property="${property}"],meta[name="${property}"]`)?.setAttribute('content', value);
     if (lastPath.current !== pathname) {
       window.scrollTo({ top: 0, behavior: 'instant' });
       document.querySelector<HTMLElement>('#main-content')?.focus({ preventScroll: true });

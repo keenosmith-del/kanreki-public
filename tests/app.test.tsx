@@ -2,10 +2,11 @@ import { describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen, within, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { App } from '../src/App';
+import { canonical, origin, pages, structuredData } from '../src/seo';
 import { MediaSlot, type MediaSpec } from '../src/components/MediaSlot';
 function mount(path='/') {return render(<MemoryRouter initialEntries={[path]}><App /></MemoryRouter>);}
 describe('public routes and navigation',()=>{
-  it.each([['/','kailor.insider'],['/about','A place for'],['/contact','Let’s talk.'],['/privacy','privacy'],['/terms','terms'],['/cookies','cookies'],['/unknown','This page isn’t here.'],['/api/users','This page isn’t here.']])('renders %s', (path,heading)=>{
+  it.each([['/','kanreki.'],['/about','A place for'],['/contact','Let’s talk.'],['/privacy','privacy'],['/terms','terms'],['/cookies','cookies'],['/unknown','This page isn’t here.'],['/api/users','This page isn’t here.']])('renders %s', (path,heading)=>{
     mount(path); expect(screen.getByRole('heading',{level:1}).textContent).toContain(heading);
   });
   it('has exactly six permanent sections and asset-free media slots',()=>{
@@ -17,6 +18,20 @@ describe('public routes and navigation',()=>{
     fireEvent.click(toggle);fireEvent.click(within(screen.getByRole('navigation',{name:'mobile navigation'})).getByText('about'));expect(screen.getByRole('heading',{level:1}).textContent).toContain('A place for');expect(screen.queryByRole('navigation',{name:'mobile navigation'})).toBeNull();
   });
   it('opens real mail without a faux contact form',()=>{const {container}=mount('/contact');expect(screen.getByRole('link',{name:'keenosmith@kailor.co.za'}).getAttribute('href')).toMatch(/^mailto:/);expect(container.querySelector('form')).toBeNull();});
+});
+describe('kanreki identity',()=>{
+  it('keeps all pages unindexed and identifies kanreki as the publisher',()=>{
+    expect(Object.values(pages).every(page=>!page.index)).toBe(true);
+    expect(canonical('/')).toBe(origin ? `${origin}/` : '');
+    expect(canonical('/unknown')).toBe('');
+    expect(structuredData['@graph'][0]).toMatchObject({publisher:{'@id':`${origin}/#organization`}});
+    expect(structuredData['@graph'][1]).toMatchObject({name:'kanreki',foundingDate:'2020'});
+  });
+  it('uses the shared wordmark and establishment year',()=>{
+    mount('/about');expect(screen.getByRole('link',{name:'kanreki home'}).textContent).toBe('kanreki.');
+    expect(screen.getByText(/Established in 2020/)).toBeTruthy();
+    expect(screen.getAllByRole('link',{name:'kailor'})[0].getAttribute('href')).toBe('https://kailor.co.za/');
+  });
 });
 describe('unconditional access restrictions',()=>{
   it.each(['/sign-in','/create-account'])('cannot submit credentials at %s',path=>{

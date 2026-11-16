@@ -1,37 +1,18 @@
-# Iteration 001 verification
+# kanreki rebrand verification — 16 November 2026
 
-## Executed
-
-| Check | Result |
+| Command / check | Result |
 | --- | --- |
-| Dependency installation | Passed using a writable copy of the existing npm cache; clean `npm ci --offline` also passed |
-| TypeScript | `npm run typecheck` passed |
-| Component/integration tests | `npm test`: 19 passed |
-| Production build | `npm run build` passed; static HTML generated for eight routes plus 404 |
-| Build audit | `npm run check:build` passed: sections/slots, route HTML, canonicals, indexing, sitemap, JSON-LD publisher, CSP hash, private-reference/source-map scan |
-| Responsive browser suite | Attempted; blocked before tests by sandbox `listen EPERM: operation not permitted 127.0.0.1:4173` |
-| Live reference view | Browser creation failed; web retrieval unavailable. GitHub main Home.tsx matched the inspected local source |
+| `npm run typecheck` | Passed |
+| `npm test` | Passed: 21 tests |
+| `npm run build` | Passed: eight static routes plus custom 404 |
+| `npm run check:build` | Passed: six sections/slots, brand, icon bytes, metadata, empty sitemap, publisher/year, CSP and private/stale-reference scan |
+| `CF_PAGES_URL=https://kanreki-preview-check.pages.dev npm run build` and matching build audit | Passed; test hostname only, no deployment or DNS action |
+| `npm run test:browser` | Blocked before browser tests: sandbox `listen EPERM: operation not permitted 127.0.0.1:4173` |
+| Supplied icon | Exact original copied; production bytes match public asset; PNG declaration and MIME type configured |
+| Reference source | Read-only inspection of neighbouring kailor public wordmark/navigation styles |
 
-No browser screenshots were captured. No pixel-level comparison, direct HTTP refresh/status check, rendered overflow assertion or actual browser keyboard/short-height check is claimed. Browser test definitions cover these checks at 1440, 1280, 768, 390 and 320px, plus 1280 × 650 and reduced motion. Source inspection is not a substitute for those checks.
+A pre-existing React Router module-level `use client` bundler warning remains non-fatal. No browser screenshots or rendered visual/console results are claimed. Browser tests cover 1440, 1280, 768, 390 and 320px layouts, disabled account forms, menus/focus, route refreshes, noindex, optional canonicals, PNG response, storage, 404s and reduced motion. A short 1280 × 650 account layout is also covered.
 
-The first unit run found one test-isolation problem: restoring the matchMedia spy removed its implementation for the following test. A beforeEach reset fixed it. The initial tsx CLI invocation attempted a prohibited IPC listener; the build now uses `node --import tsx` and disables Vite's middleware WebSocket listener, so production builds need no open listening port.
+Run `npm run build`, `npm run check:build` and `npm run test:browser` in a normal terminal with loopback access and Chromium installed (`npx playwright install chromium` if needed). Inspect the screenshots written under docs/verification before calling mobile/desktop layout and console behaviour verified. These QA captures are separate from future platform-media assets.
 
-## Remaining verification
-
-Run after `npm ci` in a normal terminal with loopback access:
-
-```sh
-npm test
-npm run build
-npm run check:build
-npx playwright install chromium
-npm run test:browser
-```
-
-Screenshots will be written under `docs/verification/`. They are evidence of this public website, not the six future platform-media assets. Inspect the screenshots and correct any visible issue before calling the iteration visually verified. Compare header, footer, typography, whitespace and account layouts against live kailor.
-
-## Readiness and approvals
-
-The implementation and static build are prepared for an independent Cloudflare Pages deployment. Full iteration acceptance remains pending actual browser/visual verification. No commit, push, deployment, resource provisioning or DNS change was performed. Legal content is visibly marked draft and excluded from indexing. Public launch needs owner/legal review and separately authorised hosting/domain setup, as requested in the brief.
-
-Future media assets and live application authentication are intentionally deferred. See `docs/media.md` for the exact Section 1 workflow for Iteration 002.
+With no configured deployment origin, no canonical or Open Graph URL is emitted. SITE_URL or CF_PAGES_URL configures the actual deployment origin without enabling indexing. All routes stay noindex and the sitemap stays empty. The future domains are not configured or presumed live. No deployment, DNS, commit or push was performed.
