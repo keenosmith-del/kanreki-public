@@ -1,0 +1,9 @@
+{
+  "ready": true,
+  "src": "/media/kanreki-hero.mp4",
+  "webm": "/media/kanreki-hero.webm",
+  "poster": "/media/kanreki-hero-poster.png",
+  "mobilePoster": "/media/kanreki-hero-mobile.png",
+  "revision": "03",
+  "seconds": 60
+}

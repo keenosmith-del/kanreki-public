@@ -37,7 +37,7 @@
   letter-spacing: -0.07em;
   color: #151517;
 }
-.site-header-brand .brand-wordmark__text::after {
+.site-header-brand .brand-text::after {
   height: 3px;
   width: 3px;
   margin-left: 2px;
@@ -362,3 +362,5 @@
 @media (max-width:760px){.site-mobile-panel a{min-height:48px}.site-header-row{gap:10px}}
 @media (max-width:390px){.site-header-row{padding:0 16px}.site-header .site-header-brand{font-size:24px}.site-account-actions{gap:6px}.site-header .site-sign-up{padding:11px 15px}}
 @media (max-width:340px){.site-header .site-header-brand{font-size:22px}.site-account-actions{gap:2px}.site-header .site-sign-up{padding:11px 12px;font-size:12px}.site-header .site-mobile-toggle{width:38px}}
+
+@media(max-width:390px){.site-header-brand .brand-text::after{width:.107142857em;height:.107142857em;margin-left:.071428571em}}

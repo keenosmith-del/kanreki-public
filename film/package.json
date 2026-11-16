@@ -1,0 +1,16 @@
+{
+  "name": "kanreki-cinematic-production",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render:revision-02": "node render-revision-02.mjs",
+    "render:revision-03": "node render-revision-03.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.541",
+    "@remotion/renderer": "4.0.541",
+    "remotion": "4.0.541",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  }
+}

@@ -5,3 +5,5 @@ playwright-report/
 .env*
 !.env.example
 .DS_Store
+film/output/
+film/imports/

@@ -10,6 +10,9 @@ if (configuredUrl) {
   origin = url.origin;
 }
 export default defineConfig({
+  // Film authoring has its own dependencies; the public app uses one React runtime.
+  resolve: { dedupe: ['react', 'react-dom'] },
+  optimizeDeps: { entries: ['index.html'] },
   define: { 'import.meta.env.VITE_SITE_ORIGIN': JSON.stringify(origin) },
   oxc: { jsx: { runtime: 'automatic' } },
   build: { sourcemap: false },

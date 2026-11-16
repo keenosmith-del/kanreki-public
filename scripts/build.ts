@@ -4,7 +4,7 @@ import { dirname } from 'node:path';
 import { createHash } from 'node:crypto';
 
 await build();
-const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
+const server = await createServer({ cacheDir: 'node_modules/.vite-ssr', server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
 const escape = (s: string) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 try {
   const { pages, pageMetadata, canonical, structuredData } = await server.ssrLoadModule('/src/seo.ts') as typeof import('../src/seo');

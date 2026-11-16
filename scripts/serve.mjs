@@ -5,7 +5,7 @@ import { resolve, extname } from 'node:path';
 const root = resolve('dist');
 const headers = await readFile('dist/_headers', 'utf8');
 const csp = headers.match(/Content-Security-Policy: (.+)/)?.[1];
-const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.svg':'image/svg+xml', '.txt':'text/plain', '.xml':'application/xml', '.woff2':'font/woff2' };
+const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.svg':'image/svg+xml', '.txt':'text/plain', '.xml':'application/xml', '.woff2':'font/woff2', '.mp4':'video/mp4', '.webm':'video/webm', '.webp':'image/webp' };
 http.createServer(async (req,res) => {
   try {
     const path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);

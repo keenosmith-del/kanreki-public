@@ -1,0 +1,11 @@
+{
+  "icon": { "file": "url-icon.png", "role": "Official supplied kanreki icon", "minWidth": 256, "minHeight": 256 },
+  "primary": { "file": "avatar.png", "name": "Keeno Smith", "minWidth": 256, "minHeight": 256 },
+  "contributor1": { "file": "user1.png", "name": "Mara Ellis", "fictionalDisplayName": true, "minWidth": 128, "minHeight": 128 },
+  "contributor2": { "file": "user2.png", "name": "Theo Lane", "fictionalDisplayName": true, "minWidth": 128, "minHeight": 128 },
+  "contributor3": { "file": "user3.png", "name": "Alex Reed", "fictionalDisplayName": true, "minWidth": 128, "minHeight": 128 },
+  "post1": { "file": "post-image1.png", "minWidth": 256, "minHeight": 256 },
+  "post2": { "file": "post-image2.png", "minWidth": 256, "minHeight": 256 },
+  "workspaceReference": { "file": "workspace-reference.png", "referenceOnly": true, "minWidth": 800, "minHeight": 400 },
+  "feedReference": { "file": "feed-reference.png", "referenceOnly": true, "minWidth": 800, "minHeight": 400 }
+}

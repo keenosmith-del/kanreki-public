@@ -6,7 +6,7 @@ for(const width of widths) {
     const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
     await page.goto('/');await page.evaluate(()=>document.fonts.ready);
     await expect(page.locator('.cinema-home>section')).toHaveCount(6);
-    await expect(page.getByRole('link',{name:'kanreki home'})).toBeVisible();
+    await expect(page.getByRole('link',{name:'kanreki.'})).toBeVisible();
     await expect(page.locator('link[rel=icon]')).toHaveAttribute('href','/url-icon.png');
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
     await page.screenshot({path:`docs/verification/home-${width}.png`,fullPage:true});

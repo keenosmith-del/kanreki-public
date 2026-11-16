@@ -9,8 +9,8 @@ describe('public routes and navigation',()=>{
   it.each([['/','kanreki.'],['/about','A place for'],['/contact','Let’s talk.'],['/privacy','privacy'],['/terms','terms'],['/cookies','cookies'],['/unknown','This page isn’t here.'],['/api/users','This page isn’t here.']])('renders %s', (path,heading)=>{
     mount(path); expect(screen.getByRole('heading',{level:1}).textContent).toContain(heading);
   });
-  it('has exactly six permanent sections and asset-free media slots',()=>{
-    const {container}=mount(); expect(container.querySelectorAll('.cinema-home>section')).toHaveLength(6);expect(container.querySelectorAll('[data-media-slot]')).toHaveLength(6);expect(container.querySelector('video,img')).toBeNull();
+  it('preserves six sections when the first film is integrated',()=>{
+    const {container}=mount(); expect(container.querySelectorAll('.cinema-home>section')).toHaveLength(6);expect(container.querySelectorAll('[data-media-slot]')).toHaveLength(6);expect(container.querySelectorAll('.cinema-editorial video,.cinema-editorial img')).toHaveLength(0);
     expect(screen.getByText(/Planned writing tools/)).toBeTruthy();
   });
   it('navigates, closes menu with Escape and restores focus',()=>{
@@ -28,7 +28,7 @@ describe('kanreki identity',()=>{
     expect(structuredData['@graph'][1]).toMatchObject({name:'kanreki',foundingDate:'2020'});
   });
   it('uses the shared wordmark and establishment year',()=>{
-    mount('/about');expect(screen.getByRole('link',{name:'kanreki home'}).textContent).toBe('kanreki.');
+    mount('/about');expect(screen.getByRole('link',{name:'kanreki.'}).textContent).toBe('kanreki.');
     expect(screen.getByText(/Established in 2020/)).toBeTruthy();
     expect(screen.getAllByRole('link',{name:'kailor'})[0].getAttribute('href')).toBe('https://kailor.co.za/');
   });
@@ -43,12 +43,12 @@ describe('unconditional access restrictions',()=>{
   });
 });
 describe('future media lifecycle',()=>{
-  const spec:MediaSpec={id:'introduction',label:'film pending',kind:'video',ratio:'16 / 9',alt:'intro',src:'/test.mp4',loop:false};
+  const spec:MediaSpec={id:'introduction',label:'film pending',kind:'video',ratio:'16 / 9',alt:'intro',src:'/test.mp4',loop:true};
   it('renders fallback when no source exists',()=>{const {container}=render(<MediaSlot spec={{...spec,src:undefined}}/>);expect(screen.getByText('film pending')).toBeTruthy();expect(container.querySelector('video')).toBeNull();});
-  it('keeps autoplay muted, inline, without loop or controls and never replays on a rerender',async()=>{
+  it('keeps autoplay muted, inline, with native loop and without controls and never replays on a rerender',async()=>{
     const play=vi.spyOn(HTMLMediaElement.prototype,'play').mockResolvedValue();
     const {container,rerender}=render(<MediaSlot spec={spec}/>);const video=container.querySelector('video')!;
-    expect(video.muted).toBe(true);expect(video.playsInline).toBe(true);expect(video.loop).toBe(false);expect(video.controls).toBe(false);
+    expect(video.muted).toBe(true);expect(video.playsInline).toBe(true);expect(video.loop).toBe(true);expect(video.controls).toBe(false);
     fireEvent.loadedData(video);await waitFor(()=>expect(play).toHaveBeenCalledTimes(1));fireEvent.ended(video);rerender(<MediaSlot spec={{...spec}}/>);fireEvent.loadedData(video);expect(play).toHaveBeenCalledTimes(1);expect(container.querySelector('video')).toBe(video);play.mockRestore();
   });
   it('falls back on autoplay rejection and decoding failure',async()=>{
