@@ -9,8 +9,8 @@ describe('public routes and navigation',()=>{
   it.each([['/','kanreki.'],['/about','A place for'],['/contact','Let’s talk.'],['/privacy','privacy'],['/terms','terms'],['/cookies','cookies'],['/unknown','This page isn’t here.'],['/api/users','This page isn’t here.']])('renders %s', (path,heading)=>{
     mount(path); expect(screen.getByRole('heading',{level:1}).textContent).toContain(heading);
   });
-  it('preserves six sections with four films integrated',()=>{
-    const {container}=mount(); expect(container.querySelectorAll('.cinema-home>section')).toHaveLength(6);expect(container.querySelectorAll('[data-media-slot]')).toHaveLength(6);expect(container.querySelectorAll('.cinema-editorial:not(#profiles):not(#drafting):not(#reading) video,.cinema-editorial:not(#profiles):not(#drafting):not(#reading) img')).toHaveLength(0);
+  it('preserves six sections with five films integrated',()=>{
+    const {container}=mount(); expect(container.querySelectorAll('.cinema-home>section')).toHaveLength(6);expect(container.querySelectorAll('[data-media-slot]')).toHaveLength(6);expect(container.querySelectorAll('.cinema-editorial video')).toHaveLength(4);
     const profileFilm=container.querySelector('#profiles video')! as HTMLVideoElement;expect(profileFilm.loop).toBe(true);expect(profileFilm.muted).toBe(true);expect(profileFilm.querySelector('source')?.getAttribute('src')).toBe('/media/kanreki-profiles-r03.mp4');expect(screen.getByRole('heading',{name:'profiles and feed interactions'})).toBeTruthy();
     const drafting=container.querySelector('#drafting')!;
     const draftingFilm=drafting.querySelector('video')! as HTMLVideoElement;
@@ -26,7 +26,15 @@ describe('public routes and navigation',()=>{
     const readingFilm=reading.querySelector('video')! as HTMLVideoElement;
     expect(readingFilm.querySelector('source')?.getAttribute('src')).toBe('/media/kanreki-reading.mp4');
     expect(readingFilm.muted&&readingFilm.loop&&readingFilm.playsInline).toBe(true);
-    expect(screen.getByText(/Planned writing tools/)).toBeTruthy();
+    const saved=container.querySelector('#search-saved')! as HTMLElement;
+    expect(within(saved).getByRole('heading',{name:'search and saved content'})).toBeTruthy();
+    expect(within(saved).getByText('Search articles, photographs and people, filter results by content type, and save posts to return to later.')).toBeTruthy();
+    expect(saved.classList.contains('cinema-editorial--media-left')).toBe(true);
+    const savedFilm=saved.querySelector('video')! as HTMLVideoElement;
+    expect(savedFilm.querySelector('source')?.getAttribute('src')).toBe('/media/kanreki-search.mp4');
+    expect(savedFilm.muted&&savedFilm.loop&&savedFilm.playsInline).toBe(true);
+    expect(screen.queryByText(/Planned writing tools/)).toBeNull();
+    for(const section of container.querySelectorAll('.cinema-editorial')){expect(section.querySelector('h2')?.textContent?.trim()).toBeTruthy();expect(section.querySelector('.cinema-copy>p')?.textContent?.trim()).toBeTruthy();}
   });
   it('navigates, closes menu with Escape and restores focus',()=>{
     mount();const toggle=screen.getByRole('button',{name:'open menu'});fireEvent.click(toggle);expect(toggle.getAttribute('aria-expanded')).toBe('true');fireEvent.keyDown(document,{key:'Escape'});expect(document.activeElement).toBe(toggle);expect(screen.queryByRole('navigation',{name:'mobile navigation'})).toBeNull();

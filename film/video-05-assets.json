@@ -1,0 +1,110 @@
+{
+  "post1": {
+    "file": "search-post-1.png",
+    "role": "post",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 1041
+  },
+  "post2": {
+    "file": "search-post-2.png",
+    "role": "post",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 1030
+  },
+  "post3": {
+    "file": "search-post-3.png",
+    "role": "post",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 735,
+    "height": 917
+  },
+  "post4": {
+    "file": "search-post-4.png",
+    "role": "post",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 1104
+  },
+  "image1": {
+    "file": "search-image-1.png",
+    "role": "image",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 920
+  },
+  "image2": {
+    "file": "search-image-2.png",
+    "role": "image",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 1200,
+    "height": 1498
+  },
+  "image3": {
+    "file": "search-image-3.png",
+    "role": "image",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 1200,
+    "height": 1498
+  },
+  "image4": {
+    "file": "search-image-4.png",
+    "role": "image",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 736
+  },
+  "user1": {
+    "file": "search-user-1.png",
+    "role": "user",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 1103
+  },
+  "user2": {
+    "file": "search-user-2.png",
+    "role": "user",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 720,
+    "height": 900
+  },
+  "user3": {
+    "file": "search-user-3.png",
+    "role": "user",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 920
+  },
+  "user4": {
+    "file": "search-user-4.png",
+    "role": "user",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 1308
+  }
+}
