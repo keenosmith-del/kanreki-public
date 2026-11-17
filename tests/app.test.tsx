@@ -9,8 +9,17 @@ describe('public routes and navigation',()=>{
   it.each([['/','kanreki.'],['/about','A place for'],['/contact','Let’s talk.'],['/privacy','privacy'],['/terms','terms'],['/cookies','cookies'],['/unknown','This page isn’t here.'],['/api/users','This page isn’t here.']])('renders %s', (path,heading)=>{
     mount(path); expect(screen.getByRole('heading',{level:1}).textContent).toContain(heading);
   });
-  it('preserves six sections when the first film is integrated',()=>{
-    const {container}=mount(); expect(container.querySelectorAll('.cinema-home>section')).toHaveLength(6);expect(container.querySelectorAll('[data-media-slot]')).toHaveLength(6);expect(container.querySelectorAll('.cinema-editorial video,.cinema-editorial img')).toHaveLength(0);
+  it('preserves six sections with the three approved films integrated',()=>{
+    const {container}=mount(); expect(container.querySelectorAll('.cinema-home>section')).toHaveLength(6);expect(container.querySelectorAll('[data-media-slot]')).toHaveLength(6);expect(container.querySelectorAll('.cinema-editorial:not(#profiles):not(#drafting) video,.cinema-editorial:not(#profiles):not(#drafting) img')).toHaveLength(0);
+    const profileFilm=container.querySelector('#profiles video')! as HTMLVideoElement;expect(profileFilm.loop).toBe(true);expect(profileFilm.muted).toBe(true);expect(profileFilm.querySelector('source')?.getAttribute('src')).toBe('/media/kanreki-profiles-r03.mp4');expect(screen.getByRole('heading',{name:'profiles and feed interactions'})).toBeTruthy();
+    const drafting=container.querySelector('#drafting')!;
+    const draftingFilm=drafting.querySelector('video')! as HTMLVideoElement;
+    expect(draftingFilm.querySelector('source')?.getAttribute('src')).toBe('/media/kanreki-drafting.mp4');
+    expect(draftingFilm.loop&&draftingFilm.muted&&draftingFilm.playsInline).toBe(true);
+    expect(drafting.classList.contains('cinema-editorial--media-left')).toBe(true);
+    expect(within(drafting as HTMLElement).getByRole('heading',{name:'ai-assisted drafting and editing'})).toBeTruthy();
+    expect(within(drafting as HTMLElement).getByRole('link',{name:'try it out'}).getAttribute('href')).toBe('/create-account');
+    expect(within(drafting as HTMLElement).queryByText(/Planned feature/)).toBeNull();
     expect(screen.getByText(/Planned writing tools/)).toBeTruthy();
   });
   it('navigates, closes menu with Escape and restores focus',()=>{

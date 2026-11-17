@@ -1,0 +1,14 @@
+export const articleTitle='why a simple drawing can say more';
+export const starter='Write a short article ';
+export const prompt='Write a short article about how a simple hand-drawn smile communicates a friendly tone. Keep it conversational and describe the drawing rather than making broad claims.';
+export const openingParagraph='A circle, two closed eyes and a curved line suggest a smiling face. Its uneven outline feels drawn by a person, rather than assembled from a template.';
+export const originalSentence='A simple drawing can make a message feel more approachable.';
+export const paragraphRemainder='Small irregularities give the image character without adding another thing to explain.';
+export const originalEnding='The aim is to keep only the details that help the message land.';
+export const firstSuggestion='A few familiar marks can make a message feel more personal.';
+export const refreshedSuggestion='A hand-drawn smile can set a friendly tone before anyone reads a word.';
+export const shorterSuggestion='Keep the details that carry the message.';
+export const boldPhrase='Small irregularities';
+export const initialParagraphs=[openingParagraph,originalSentence+' '+paragraphRemainder,originalEnding];
+export const finalParagraphs=[openingParagraph,refreshedSuggestion+' '+paragraphRemainder,shorterSuggestion];
+export const sectionCopy={heading:'ai-assisted drafting and editing',description:'Describe what you want to write and generate a draft. Revise selected passages with AI suggestions, format your content, add images and review the finished article before publishing.',disclosure:'Planned feature · this film demonstrates a simulated workflow.'};

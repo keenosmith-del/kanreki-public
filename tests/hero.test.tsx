@@ -32,9 +32,9 @@ describe('hero first playback cycle',()=>{
     const fallback=vi.fn();const {container}=render(<MediaSlot spec={spec} onFallback={fallback}/>);
     fireEvent.loadedData(container.querySelector('video')!);await waitFor(()=>expect(fallback).toHaveBeenCalledOnce());play.mockRestore();
   });
-  it('keeps other five media manifests exactly as before',()=>{
+  it('preserves the hero and activates the approved profile and drafting films',()=>{
     expect(media.introduction.loop).toBe(true);
-    expect(media.feed).not.toHaveProperty('src');expect(media.profile).not.toHaveProperty('src');
+    expect(media.introduction.src).toBe('/media/kanreki-hero.mp4');expect(media.feed.src).toBe('/media/kanreki-profiles-r03.mp4');expect(media.feed.loop).toBe(true);expect(media.profile).not.toHaveProperty('src');expect(media.social.src).toBe('/media/kanreki-drafting.mp4');expect(media.writing).not.toHaveProperty('src');expect(media.closing).not.toHaveProperty('src');
     expect(media.social.loop).toBe(true);expect(media.writing.loop).toBe(true);expect(media.closing.loop).toBe(true);
   });
 });

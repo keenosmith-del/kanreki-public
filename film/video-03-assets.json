@@ -1,0 +1,5 @@
+{
+  "article": {"file":"new-post-image.png","role":"Inserted article image, preview, publication and new feed thumbnail","minWidth":256,"minHeight":256},
+  "existing1": {"file":"feed-existing-1.png","role":"First existing post beneath the new article","minWidth":256,"minHeight":256},
+  "existing2": {"file":"feed-existing-2.png","role":"Second existing post beneath the new article","minWidth":256,"minHeight":256}
+}

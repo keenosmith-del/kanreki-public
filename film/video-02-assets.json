@@ -1,0 +1,68 @@
+{
+  "gallery1": {
+    "file": "home-feed-new.jpeg",
+    "role": "First supplied profile image post",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "gallery2": {
+    "file": "home-feed-new-2.jpeg",
+    "role": "Second supplied profile image post",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "gallery3": {
+    "file": "posts-feed-new.jpeg",
+    "role": "Third supplied profile image post",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "feed1": {
+    "file": "another-post.jpeg",
+    "role": "Supplied editorial image",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "feed2": {
+    "file": "another-post-2.jpeg",
+    "role": "Supplied editorial image",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "profileReference": {
+    "file": "profile-reference.png",
+    "referenceOnly": true,
+    "minWidth": 800,
+    "minHeight": 400
+  },
+  "profileArticle1": {
+    "file": "profile-image-1.png",
+    "role": "Profile Posts first article only",
+    "minWidth": 128,
+    "minHeight": 128
+  },
+  "profileArticle2": {
+    "file": "profile-image-2.png",
+    "role": "Profile Posts second article only",
+    "minWidth": 128,
+    "minHeight": 128
+  },
+  "feedArticle1": {
+    "file": "profile-image-3.png",
+    "role": "Main feed article only",
+    "minWidth": 128,
+    "minHeight": 128
+  },
+  "feedArticle2": {
+    "file": "feed-image-1.png",
+    "role": "Main feed article only",
+    "minWidth": 128,
+    "minHeight": 128
+  },
+  "feedArticle3": {
+    "file": "feed-image-2.png",
+    "role": "Main feed article only",
+    "minWidth": 128,
+    "minHeight": 128
+  }
+}

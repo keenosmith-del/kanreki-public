@@ -6,8 +6,8 @@ const heroSources = hero.ready ? {src:hero.src,webm:hero.webm,poster:hero.poster
 // Activated only after rendered-media validation and visual review gates.
 export const media = {
   introduction: { id: 'introduction', label: 'introduction / film pending', kind: 'video', ratio: '16 / 9', alt: 'kanreki. read. write. everything.', loop: true, ...heroSources },
-  feed: { id: 'feed', label: 'publication interface / visual pending', kind: 'image', ratio: '16 / 10', alt: 'The publication feed and search' },
-  social: { id: 'social', label: 'social interactions / film pending', kind: 'video', ratio: '16 / 10', alt: 'Reading and responding to a post', loop: true },
+  feed: { id: 'feed', label: 'profiles and feed interactions', kind: 'video', ratio: '16 / 10', alt: 'Exploring Keeno Smith’s profile, photographic posts, published articles and feed conversations', src: '/media/kanreki-profiles-r03.mp4', webm: '/media/kanreki-profiles-r03.webm', poster: '/media/kanreki-profiles-r03-poster.png', mobilePoster: '/media/kanreki-profiles-r03-mobile.png', loop: true },
+  social: { id: 'social', label: 'ai-assisted drafting and editing', kind: 'video', ratio: '16 / 10', alt: 'Drafting an article with AI, revising selected passages, adding an image and publishing to the feed', src: '/media/kanreki-drafting.mp4', webm: '/media/kanreki-drafting.webm', poster: '/media/kanreki-drafting-poster.png', loop: true },
   profile: { id: 'profile', label: 'profiles and publishing / visual pending', kind: 'image', ratio: '16 / 10', alt: 'A writer’s profile and published work' },
   writing: { id: 'writing', label: 'writing assistance / demonstration pending', kind: 'video', ratio: '16 / 10', alt: 'A planned writing assistance demonstration', loop: true },
   closing: { id: 'closing', label: 'closing / film pending', kind: 'video', ratio: '16 / 9', alt: 'Read something new. Write something of your own.', loop: true },

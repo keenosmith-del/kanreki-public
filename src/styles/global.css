@@ -26,3 +26,8 @@
 .hero-static-lockup>p{font-size:clamp(22px,2.6vw,38px);letter-spacing:-.04em;margin:24px 0}
 .hero-static-lockup>span{display:block;font-size:17px;line-height:1.6;color:#77777c;max-width:420px;margin:auto}
 @media(max-width:760px){.introduction{min-height:520px}.hero-static-lockup{max-width:350px}.hero-static-lockup>span{font-size:16px}.hero-account-actions{gap:15px}.hero-account-actions .button{padding:14px 23px}}
+
+/* Approved Section 3 film: video left, editorial copy and account access right. */
+.cinema-copy .feature-cta{margin-top:28px}
+.cinema-editorial--media-left>.media-slot{order:-1}
+@media(min-width:901px){.cinema-editorial--media-left{grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr)}}

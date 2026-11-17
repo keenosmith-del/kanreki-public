@@ -34,7 +34,11 @@
     "film:typecheck": "tsc --noEmit -p film/tsconfig.json",
     "film:revision04": "node film/render-revision-04.mjs all",
     "film:export:revision04": "node film/export-revision-04.mjs",
-    "film:integrate:revision04": "node film/integrate-revision-04.mjs"
+    "film:integrate:revision04": "node film/integrate-revision-04.mjs",
+    "film:video2:proof": "node film/render-video-02.mjs proof",
+    "film:video2": "node film/render-video-02.mjs all",
+    "film:video2:export": "node film/export-video-02.mjs",
+    "film:video2:integrate": "node film/integrate-video-02.mjs"
   },
   "dependencies": {
     "react": "19.2.7",
