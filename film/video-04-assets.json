@@ -1,0 +1,110 @@
+{
+  "post1": {
+    "file": "post-1.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "post",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 736
+  },
+  "post2": {
+    "file": "post-2.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "post",
+    "actualFormat": "mjpeg",
+    "width": 735,
+    "height": 915
+  },
+  "post3": {
+    "file": "post-3.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "post",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 917
+  },
+  "post4": {
+    "file": "post-4.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "post",
+    "actualFormat": "mjpeg",
+    "width": 486,
+    "height": 720
+  },
+  "author1": {
+    "file": "author-1.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "author",
+    "actualFormat": "mjpeg",
+    "width": 585,
+    "height": 808
+  },
+  "author2": {
+    "file": "author-2.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "author",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 1318
+  },
+  "author3": {
+    "file": "author-3.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "author",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 920
+  },
+  "author4": {
+    "file": "author-4.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "author",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 1035
+  },
+  "commentor1": {
+    "file": "commentor-1.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "commentor",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 1104
+  },
+  "commentor2": {
+    "file": "commentor-2.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "commentor",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 981
+  },
+  "commentor3": {
+    "file": "commentor-3.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "commentor",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 1011
+  },
+  "commentor4": {
+    "file": "commentor-4.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "role": "commentor",
+    "actualFormat": "mjpeg",
+    "width": 736,
+    "height": 903
+  }
+}
