@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-18T20:34:57.828630+00:00",
+  "origin": "https://kanreki-public.pages.dev",
+  "command": "KANREKI_LIVE_URL=https://kanreki-public.pages.dev npx playwright test --config playwright.live.config.ts",
+  "passed": 16,
+  "failed": 0,
+  "viewports": [
+    1440,
+    1280,
+    768,
+    390,
+    320
+  ],
+  "evidence": "Actual live HTTPS Playwright run: 16 passed (39.9s).",
+  "sourceFingerprint": "fcd2ce6facb55c01389b8363936e40f6d6ef64a95f47a3a9b7becaf14b103a50"
+}

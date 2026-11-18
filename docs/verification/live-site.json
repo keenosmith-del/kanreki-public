@@ -1,0 +1,135 @@
+{
+  "checkedAt": "2026-11-18T20:33:13.467Z",
+  "origin": "https://kanreki-public.pages.dev",
+  "mode": "preview",
+  "httpsVerified": true,
+  "routesPassed": true,
+  "assetsPassed": true,
+  "indexingPassed": false,
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "kanreki | read. write. everything.",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "about | kanreki",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "title": "contact | kanreki",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    },
+    {
+      "path": "/sign-in",
+      "status": 200,
+      "title": "sign in | kanreki",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    },
+    {
+      "path": "/create-account",
+      "status": 200,
+      "title": "create account | kanreki",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "title": "privacy | kanreki",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "title": "terms | kanreki",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    },
+    {
+      "path": "/cookies",
+      "status": 200,
+      "title": "cookies | kanreki",
+      "robots": "noindex, follow",
+      "robotHeader": "noindex, follow, noindex, follow"
+    }
+  ],
+  "assets": [
+    {
+      "path": "/social-preview.png",
+      "bytes": 58810,
+      "type": "image/png"
+    },
+    {
+      "path": "/url-icon.png",
+      "bytes": 879720,
+      "type": "image/png"
+    },
+    {
+      "path": "/media/kanreki-hero.mp4",
+      "bytes": 20154449,
+      "type": "video/mp4"
+    },
+    {
+      "path": "/media/kanreki-profiles-r03.mp4",
+      "bytes": 21505850,
+      "type": "video/mp4"
+    },
+    {
+      "path": "/media/kanreki-drafting.mp4",
+      "bytes": 20058453,
+      "type": "video/mp4"
+    },
+    {
+      "path": "/media/kanreki-reading.mp4",
+      "bytes": 17516118,
+      "type": "video/mp4"
+    },
+    {
+      "path": "/media/kanreki-search.mp4",
+      "bytes": 21031108,
+      "type": "video/mp4"
+    },
+    {
+      "path": "/media/kanreki-community.mp4",
+      "bytes": 16111034,
+      "type": "video/mp4"
+    },
+    {
+      "path": "/media/kanreki-drafting.webm",
+      "bytes": 21505243,
+      "type": "video/webm"
+    },
+    {
+      "path": "/media/kanreki-search.webm",
+      "bytes": 20681924,
+      "type": "video/webm"
+    },
+    {
+      "path": "/media/kanreki-profiles-r03.webm",
+      "bytes": 21265656,
+      "type": "video/webm"
+    }
+  ],
+  "build": {
+    "production": false,
+    "origin": "",
+    "environment": "preview",
+    "contactConfigured": true,
+    "indexable": [],
+    "sourceCommit": "0510a7b869449b6ff24904562092ec4bffde43ce",
+    "sourceFingerprint": "fcd2ce6facb55c01389b8363936e40f6d6ef64a95f47a3a9b7becaf14b103a50"
+  },
+  "remoteMainCommit": "0510a7b869449b6ff24904562092ec4bffde43ce",
+  "sitemapUrls": []
+}

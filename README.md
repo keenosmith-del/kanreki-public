@@ -4,6 +4,8 @@ Independent React, TypeScript and Vite public website for [keenosmith-del/kanrek
 
 Six approved cinematic films are integrated. This iteration preserves their source and MP4 exports; only three authorized WebM delivery encodes change. Lower-page films load near the viewport; mobile and reduced-motion users receive the existing static posters. The hero retains its first-completed-playback account actions.
 
+Live noindex deployment: [kanreki-public.pages.dev](https://kanreki-public.pages.dev/). Cloudflare Pages builds this repository’s `main` branch with GitHub integration. Public indexing remains gated by legal review and the shared provider-origin security decision. See [current deployment report](docs/predeployment.md).
+
 Use Node 24 (`.node-version`).
 
 ```sh

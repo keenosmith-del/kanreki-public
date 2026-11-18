@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-18T17:44:02.954199+00:00",
+  "checkedAt": "2026-11-18T20:34:07.162106+00:00",
   "account": {
     "pagesProjectListingSucceeded": true,
     "verifiedAgainstKailor": true,
@@ -26,5 +26,11 @@
     "httpsVerified": true,
     "robots": "noindex, follow"
   },
-  "kailorBaselineConfigSha256": "0daee42f2a37194a7eed421940db5a5c5ae16f14a76aeb3f2c98acdee8e0539f"
+  "kailorBaselineConfigSha256": "0daee42f2a37194a7eed421940db5a5c5ae16f14a76aeb3f2c98acdee8e0539f",
+  "kailorUnchanged": true,
+  "latestDeployment": {
+    "id": "9e6706c1-1f9f-48d7-a7a4-48dafcde1f22",
+    "status": "success",
+    "commit": "0510a7b869449b6ff24904562092ec4bffde43ce"
+  }
 }

@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-18T20:34:07.162106+00:00",
+  "origin": "https://kanreki-public.pages.dev",
+  "providerStatus": "OK",
+  "subject": "kanreki website enquiry",
+  "providerRecordLocalTime": "2026-11-18T19:53:09+02:00",
+  "parameterNames": [
+    "from_name",
+    "reply_to",
+    "name",
+    "email",
+    "form_type",
+    "subject",
+    "message"
+  ],
+  "referrerVerified": true,
+  "sharedTemplateUnchanged": true,
+  "inbox": {
+    "confirmed": true,
+    "actor": "owner",
+    "evidence": "Owner confirmed receipt in this chat for the production test sent at 19:53 SAST on 18 November 2026.",
+    "confirmedAt": "2026-11-18T20:35:29.669784+00:00"
+  },
+  "originControls": {
+    "domainsSaveLocked": true,
+    "configuredDomains": 0,
+    "nonBrowserAPIEnabled": false,
+    "subscriptionChanged": false
+  }
+}

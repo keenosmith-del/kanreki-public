@@ -95,3 +95,9 @@ Release checks now evaluate current provider evidence, live HTTPS responses/sour
 8. Validate redirects, canonical URLs and search indexing; submit the final sitemap in Search Console.
 
 Do not configure redirects before the purchased domain is connected and serving. Roll back only this independent public-site deployment using its recorded deployment ID and source commit; never change kailor or the publishing application.
+
+## Live verification | 18 November 2026
+
+The GitHub-backed site is live at https://kanreki-public.pages.dev/. Required local commands passed (118 unit, 32 browser tests; zero production vulnerabilities), and 16 additional live browser checks passed. The preview security-header conflict found on the initial deployment was corrected; Cloudflare now serves the intended CSP and Permissions-Policy. All six films load from their approved paths. Full-download byte counting covers CDN responses without Content-Length. Kailor’s existing project configuration matches its predeployment digest.
+
+EmailJS recorded one genuine production-origin enquiry as OK at 19:53:09 SAST with the correct subject and parameter mapping. The owner confirmed receipt of the production message separately from the earlier local test. Its domain allowlist Save control is locked on the current plan; no provider settings or subscription were changed. See `docs/predeployment.md` and verification evidence for remaining legal/security gates. Keep DEPLOYMENT_ENV=preview until those decisions are resolved, then trigger and verify a fresh GitHub production build; setting an environment variable does not update existing HTML.

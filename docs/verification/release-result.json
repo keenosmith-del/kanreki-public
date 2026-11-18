@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-18T20:36:20.378698+00:00",
+  "outcome": "Deployment live, release gated",
+  "origin": "https://kanreki-public.pages.dev",
+  "outstanding": [
+    "Owner/legal review of working drafts",
+    "Owner decision on unavailable shared EmailJS domain allowlist",
+    "Fresh indexable production build after those approvals"
+  ],
+  "productionEmailInboxConfirmed": true,
+  "noindexRetained": true
+}
