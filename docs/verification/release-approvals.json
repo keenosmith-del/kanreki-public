@@ -1,0 +1,12 @@
+{
+  "legal": {
+    "status": "pending",
+    "origin": "https://kanreki-public.pages.dev",
+    "reason": "Technical deployment authorization does not constitute legal approval."
+  },
+  "providerSecurity": {
+    "status": "pending",
+    "origin": "https://kanreki-public.pages.dev",
+    "reason": "No subscription change or security exception has been approved."
+  }
+}

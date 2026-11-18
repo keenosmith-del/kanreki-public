@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-11-18T17:48:07.722Z",
+  "sourceFingerprint": "45d5b367eaa2ce49d3e14ce1794555a0464762db0e5eff894eea34fcbb71a6e4",
+  "commands": [
+    {
+      "command": "npm ci",
+      "exitCode": 0,
+      "summary": [
+        "found 0 vulnerabilities"
+      ]
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "summary": []
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "summary": [
+        "Tests  118 passed (118)"
+      ]
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "summary": []
+    },
+    {
+      "command": "npm run check:build",
+      "exitCode": 0,
+      "summary": [
+        "Build checks passed: preview, 8 routes + 404, 0 sitemap URLs, titles, social image, LinkedIn, CSP, privacy and approved-film hashes."
+      ]
+    },
+    {
+      "command": "npm run test:browser -- --workers=1",
+      "exitCode": 0,
+      "summary": [
+        "32 passed (56.4s)"
+      ]
+    },
+    {
+      "command": "npm audit --omit=dev",
+      "exitCode": 0,
+      "summary": [
+        "found 0 vulnerabilities"
+      ]
+    }
+  ]
+}

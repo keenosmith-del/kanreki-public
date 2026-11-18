@@ -1,0 +1,10 @@
+{
+  "checkedOn": "2026-11-18",
+  "cli": "Wrangler 4, read-only whoami and pages project list",
+  "oauthSessionPresent": true,
+  "pagesProjectListingSucceeded": false,
+  "apiErrorCode": 10000,
+  "missingOauthScopesWarning": true,
+  "projectOrDeploymentCreated": false,
+  "ownerAction": "Refresh Wrangler authorization with Pages permissions in the intended account before authorized project creation/deployment. No account identifiers or tokens are recorded."
+}

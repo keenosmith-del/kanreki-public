@@ -1,6 +1,10 @@
 # kanreki | independent Cloudflare Pages deployment
 
-Repository: `keenosmith-del/kanreki-public`. No Pages project, deployment, DNS record or domain has been created in this iteration. The actual stable Pages hostname is **not yet known**. `kanreki.co.za` is not purchased and must not be used in configuration or redirects yet.
+Repository: `keenosmith-del/kanreki-public`. The independent **GitHub-connected** Pages project `kanreki-public` now exists in the account verified against the existing kailor zone and Pages project. Its actual assigned and HTTPS-verified stable origin is **https://kanreki-public.pages.dev**. The initial Git-source build successfully deployed approved commit `16177fd83fe8df79fa31a34a842ef9abe46f2cc6` and is deliberately **noindex** while release reviews remain pending. No custom domain was configured or purchased.
+
+The production environment has `NODE_VERSION=24`, the existing shared EmailJS browser-public values (encrypted project settings), `SITE_URL=https://kanreki-public.pages.dev`, and `SITE_ORIGIN_VERIFIED=true`. **`DEPLOYMENT_ENV` stays `preview` until required legal and provider-security decisions are resolved.** Those decisions must precede a fresh `DEPLOYMENT_ENV=production` build; setting variables cannot change already-generated HTML.
+
+Deployment verification is being completed against the real HTTPS site. `docs/verification/deployment.json` records the provider-sourced project/deployment identity without account IDs or secret values. Historical predeployment authorization and asset evidence are retained under `docs/verification/history/`.
 
 ## Project settings after owner authorization
 
@@ -74,7 +78,9 @@ Run `npm run check:release` to list the unresolved launch gates; it deliberately
 
 Release gates now concern actual external authorization: a stable project hostname and HTTPS verification, refreshed Cloudflare Pages authorization, the shared provider's production-origin controls and legal review. Shared local EmailJS delivery and static-asset sizes are resolved.
 
-Read-only CLI inspection found an OAuth session, but `wrangler pages project list` failed with Cloudflare authentication error **10000** and a missing-scope warning. The owner must refresh Wrangler authorization with Pages access in the intended account before authorized project creation/deployment. No account/token identifiers are recorded. `wrangler.jsonc` names only `kanreki-public` and `dist`; it cannot change kailor's project unless an operator deliberately runs elsewhere. No deployment command was run.
+Wrangler 4.164.0 authorization was refreshed through its official OAuth flow with owner approval. The old token was valid for account reads but lacked Pages and zone scopes. The refreshed session successfully listed Pages projects and verified the intended account against both `kailor.co.za` and the existing kailor Pages project. The new project uses GitHub source integration; no Direct Upload deployment was used. Initial build/deployment was triggered through the documented Git-branch deployment API, and subsequent necessary commits trigger GitHub-integrated builds.
+
+Release checks now evaluate current provider evidence, live HTTPS responses/source identity, exact tested-source fingerprints, output sizes, production email proof and separately recorded owner approvals. They no longer unconditionally claim authorization is broken. A noindex deployment can be live while legal/security reviews and the final indexable rebuild remain gated.
 
 
 ## Later domain migration | separate authorization

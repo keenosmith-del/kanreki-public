@@ -2,8 +2,13 @@ import {build,createServer} from 'vite';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {sourceFingerprint} from '../config/source-fingerprint.mjs';
 import {siteConfig} from '../config/site.mjs';
 const site=siteConfig(),dist=process.env.BROWSER_TEST_BUILD==='true'?'dist-browser-test':'dist';
+const sourceCommit=process.env.CF_PAGES_COMMIT_SHA||execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+if(!/^[a-f0-9]{40}$/i.test(sourceCommit))throw Error('A valid source commit is required for deployment verification.');
+const fingerprint=await sourceFingerprint();
 await build();
 const server=await createServer({cacheDir:'node_modules/.vite-ssr',server:{middlewareMode:true,hmr:false,ws:false},appType:'custom'});
 const escape=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
@@ -13,7 +18,7 @@ try{
  const {render}=await server.ssrLoadModule('/src/entry-server.tsx');
  const template=await readFile(dist+'/index.html','utf8'),jsonld=JSON.stringify(structuredData).replace(/</g,'\\u003c'),hash=createHash('sha256').update(jsonld).digest('base64');
  let headers=(await readFile('public/_headers','utf8')).replace('JSONLD_HASH',hash).replace('EMAILJS_CONNECT',contactConfigured?'https://api.emailjs.com':"'none'");
- if(!site.production)headers+='\n/*\n  X-Robots-Tag: noindex, follow\n';
+ if(!site.production)headers=headers.replace('/*\n','/*\n  X-Robots-Tag: noindex, follow\n');
  for(const route of [...Object.keys(pages),'/404.html','/404']){
   const m=pageMetadata(route),robots=route.startsWith('/404')?'noindex':m.index?'index, follow':'noindex, follow';
   for(const path of route==='/'?['/']:[route,route+'/',...(route.endsWith('.html')?[]:[route+'/index.html'])])headers+=`\n${path}\n  X-Robots-Tag: ${robots}\n`;
@@ -30,6 +35,6 @@ ${url?`<link rel="canonical" href="${url}"/>`:''}<meta property="og:type" conten
  const indexable=Object.keys(pages).filter(path=>pageMetadata(path).index&&canonical(path));
  await writeFile(dist+'/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map(path=>`  <url><loc>${canonical(path)}</loc></url>`).join('\n')}\n</urlset>\n`);
  await writeFile(dist+'/robots.txt',`User-agent: *\nAllow: /\n${site.production?`\nSitemap: ${site.origin}/sitemap.xml\n`:'# Preview: indexing is disabled in HTML and response headers.\n'}`);
- await writeFile(dist+'/build-info.json',JSON.stringify({...site,contactConfigured,indexable},null,2));
+ await writeFile(dist+'/build-info.json',JSON.stringify({...site,contactConfigured,indexable,sourceCommit,sourceFingerprint:fingerprint},null,2));
  console.log(`Prerendered 8 routes and HTTP 404; ${site.environment}; ${indexable.length} sitemap URLs.`);
 }finally{await server.close()}

@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-18T17:44:02.954199+00:00",
+  "account": {
+    "pagesProjectListingSucceeded": true,
+    "verifiedAgainstKailor": true,
+    "method": "OAuth Pages API plus exact kailor.co.za zone and existing kailor Pages project match"
+  },
+  "project": {
+    "name": "kanreki-public",
+    "origin": "https://kanreki-public.pages.dev",
+    "sourceProvider": "github",
+    "repository": "keenosmith-del/kanreki-public",
+    "productionBranch": "main",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "rootDirectory": "/",
+    "nodeVersion": "24",
+    "emailjsIdentifiersPresent": true,
+    "buildMode": "preview"
+  },
+  "initialDeployment": {
+    "id": "253a2855-41e0-4401-86c4-0dc21a1efb8b",
+    "commitSha": "16177fd83fe8df79fa31a34a842ef9abe46f2cc6",
+    "status": "success",
+    "source": "github",
+    "httpsVerified": true,
+    "robots": "noindex, follow"
+  },
+  "kailorBaselineConfigSha256": "0daee42f2a37194a7eed421940db5a5c5ae16f14a76aeb3f2c98acdee8e0539f"
+}

@@ -1,16 +1,16 @@
-// Deliberately stricter than structural checks: missing external setup must block launch.
 import {readFile} from 'node:fs/promises';
 import {auditAssetSizes} from './asset-sizes.mjs';
-const root=process.env.STATIC_ROOT||'dist',info=JSON.parse(await readFile(root+'/build-info.json','utf8'));
-const blockers=[];
-if(!info.production||!info.origin)blockers.push('No verified stable HTTPS production origin has been configured.');
-if(!info.contactConfigured)blockers.push('Owner-approved shared EmailJS public identifiers are missing.');
-const {oversized}=await auditAssetSizes(root);
-for(const file of oversized)blockers.push('Cloudflare Pages asset exceeds 25 MiB: '+file.path);
-// External evidence is explicit; a mocked success never satisfies the live-delivery gate.
-const delivery=JSON.parse(await readFile('docs/verification/emailjs-verification.json','utf8'));
-if(delivery.liveRequest?.status!=='OK'||delivery.liveRequest?.inboxConfirmed!==true)blockers.push('Live EmailJS provider success and owner inbox confirmation are required.');
-blockers.push('The production origin must be authorized in the shared EmailJS account; the current Domains controls are locked. Owner configuration/plan decision is required.');
-blockers.push('Cloudflare Pages authorization must be refreshed: read-only project listing returned authentication error 10000.');
-blockers.push('Legal drafts and actual hosting/provider processing require owner/legal review.');
-if(blockers.length){console.error('Release is blocked:\n'+blockers.map(item=>'- '+item).join('\n'));process.exitCode=1;}else console.log('Release checks passed.');
+import {sourceFingerprint} from '../config/source-fingerprint.mjs';
+import {releaseGates} from '../config/release.mjs';
+import {verifyLive} from './verify-live.mjs';
+const readJson=async(path,fallback={})=>{try{return JSON.parse(await readFile(path,'utf8'));}catch(error){if(error.code==='ENOENT')return fallback;throw error;}};
+const root=process.env.STATIC_ROOT||'dist';
+const build=await readJson(root+'/build-info.json');
+const cloudflare=await readJson('docs/verification/deployment.json');
+const email=await readJson('docs/verification/emailjs-production.json');
+const approvals=await readJson('docs/verification/release-approvals.json');
+const checks=await readJson('docs/verification/deployment-tests.json');
+let live={};
+if(cloudflare.project?.origin){try{live=await verifyLive(cloudflare.project.origin,{mode:build.production?'production':'preview'});}catch(error){console.error('Live verification failed:',error.message);}}
+const gates=releaseGates({build,cloudflare,live,email,approvals,checks,fingerprint:await sourceFingerprint(),oversized:(await auditAssetSizes(root)).oversized});
+if(gates.length){console.error('Deployment/release gates:\n'+gates.map(gate=>`- [${gate.code}] ${gate.message}`).join('\n'));process.exitCode=1;}else console.log('Production launched and verified: all automated checks and recorded owner approvals pass.');

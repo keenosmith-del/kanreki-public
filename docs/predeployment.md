@@ -1,3 +1,11 @@
+# Deployment iteration | 18 November 2026
+
+The approved predeployment implementation was pushed as `16177fd83fe8df79fa31a34a842ef9abe46f2cc6`. A GitHub-backed Cloudflare Pages project has now been created in the verified intended account, and its first noindex deployment succeeded at **https://kanreki-public.pages.dev** from that exact commit. OAuth Pages access is restored. Deployment-specific security-header handling, source identity and evidence-based release checks are being verified; current deployment details are recorded in `docs/deployment.md` and `docs/verification/deployment.json`.
+
+The local predeployment record below is preserved as historical evidence. Its earlier statements about absent hosting or unresolved OAuth access describe that earlier stage, not the current deployment.
+
+---
+
 # kanreki | final corrections and deployment readiness | 18 November 2026
 
 Completed locally in `/Users/keenosmith/Programming/kanreki-public`, preserving the pre-existing uncommitted predeployment work. Branch remains `main` at `3b5d0fb63f9e535eca7f5c635f37ea7c9603da35`. Nothing was staged, committed, pushed, merged or deployed. No kailor source, account configuration, template, subscription, DNS or deployment was changed.

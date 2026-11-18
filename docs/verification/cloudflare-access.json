@@ -1,10 +1,14 @@
 {
   "checkedOn": "2026-11-18",
-  "cli": "Wrangler 4, read-only whoami and pages project list",
-  "oauthSessionPresent": true,
-  "pagesProjectListingSucceeded": false,
-  "apiErrorCode": 10000,
-  "missingOauthScopesWarning": true,
-  "projectOrDeploymentCreated": false,
-  "ownerAction": "Refresh Wrangler authorization with Pages permissions in the intended account before authorized project creation/deployment. No account identifiers or tokens are recorded."
+  "wranglerVersion": "4.164.0",
+  "oauthRefreshedWithOwnerApproval": true,
+  "pagesScopeGranted": true,
+  "pagesProjectListingSucceeded": true,
+  "accessibleAccountCount": 1,
+  "accountVerifiedAgainst": "Existing kailor.co.za zone and kailor GitHub-backed Pages project",
+  "diagnosis": "The prior OAuth session was valid for user/account reads but did not grant pages:write or zone:read. After supported OAuth refresh, Pages listing and project creation succeeded in the verified account.",
+  "kanrekiProjectCreated": true,
+  "sourceProvider": "github",
+  "repository": "keenosmith-del/kanreki-public",
+  "accountAndTokenIdentifiersOmitted": true
 }

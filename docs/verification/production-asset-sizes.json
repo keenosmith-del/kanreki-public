@@ -5,7 +5,7 @@
   "files": [
     {
       "path": "_headers",
-      "bytes": 1890
+      "bytes": 1886
     },
     {
       "path": "404.html",
@@ -16,8 +16,8 @@
       "bytes": 5821
     },
     {
-      "path": "assets/index-B_QPFrxp.js",
-      "bytes": 264499
+      "path": "assets/index-_nmsMsKh.js",
+      "bytes": 264474
     },
     {
       "path": "assets/index-CJPRXCl1.css",
@@ -25,7 +25,7 @@
     },
     {
       "path": "build-info.json",
-      "bytes": 117
+      "bytes": 270
     },
     {
       "path": "contact/index.html",
@@ -145,7 +145,7 @@
     },
     {
       "path": "privacy/index.html",
-      "bytes": 6592
+      "bytes": 6567
     },
     {
       "path": "robots.txt",

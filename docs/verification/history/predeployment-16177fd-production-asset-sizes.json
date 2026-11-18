@@ -1,0 +1,179 @@
+{
+  "root": "dist",
+  "limitBytes": 26214400,
+  "allFilesPassed": true,
+  "files": [
+    {
+      "path": "_headers",
+      "bytes": 1890
+    },
+    {
+      "path": "404.html",
+      "bytes": 4643
+    },
+    {
+      "path": "about/index.html",
+      "bytes": 5821
+    },
+    {
+      "path": "assets/index-B_QPFrxp.js",
+      "bytes": 264499
+    },
+    {
+      "path": "assets/index-CJPRXCl1.css",
+      "bytes": 25461
+    },
+    {
+      "path": "build-info.json",
+      "bytes": 117
+    },
+    {
+      "path": "contact/index.html",
+      "bytes": 5258
+    },
+    {
+      "path": "cookies/index.html",
+      "bytes": 5925
+    },
+    {
+      "path": "create-account/index.html",
+      "bytes": 4589
+    },
+    {
+      "path": "fonts/inter.woff2",
+      "bytes": 24272
+    },
+    {
+      "path": "fonts/LICENSE.txt",
+      "bytes": 4477
+    },
+    {
+      "path": "index.html",
+      "bytes": 10483
+    },
+    {
+      "path": "media/kanreki-community-mobile.png",
+      "bytes": 86626
+    },
+    {
+      "path": "media/kanreki-community-poster.png",
+      "bytes": 94347
+    },
+    {
+      "path": "media/kanreki-community.mp4",
+      "bytes": 16111034
+    },
+    {
+      "path": "media/kanreki-community.webm",
+      "bytes": 22332269
+    },
+    {
+      "path": "media/kanreki-drafting-poster.png",
+      "bytes": 300380
+    },
+    {
+      "path": "media/kanreki-drafting.mp4",
+      "bytes": 20058453
+    },
+    {
+      "path": "media/kanreki-drafting.webm",
+      "bytes": 21505243
+    },
+    {
+      "path": "media/kanreki-hero-mobile.png",
+      "bytes": 40380
+    },
+    {
+      "path": "media/kanreki-hero-poster.png",
+      "bytes": 72892
+    },
+    {
+      "path": "media/kanreki-hero.mp4",
+      "bytes": 20154449
+    },
+    {
+      "path": "media/kanreki-hero.webm",
+      "bytes": 13085046
+    },
+    {
+      "path": "media/kanreki-profiles-r03-mobile.png",
+      "bytes": 365436
+    },
+    {
+      "path": "media/kanreki-profiles-r03-poster.png",
+      "bytes": 559662
+    },
+    {
+      "path": "media/kanreki-profiles-r03.mp4",
+      "bytes": 21505850
+    },
+    {
+      "path": "media/kanreki-profiles-r03.webm",
+      "bytes": 21265656
+    },
+    {
+      "path": "media/kanreki-reading-mobile.png",
+      "bytes": 166518
+    },
+    {
+      "path": "media/kanreki-reading-poster.png",
+      "bytes": 340589
+    },
+    {
+      "path": "media/kanreki-reading.mp4",
+      "bytes": 17516118
+    },
+    {
+      "path": "media/kanreki-reading.webm",
+      "bytes": 13779083
+    },
+    {
+      "path": "media/kanreki-search-mobile.png",
+      "bytes": 136588
+    },
+    {
+      "path": "media/kanreki-search-poster.png",
+      "bytes": 278431
+    },
+    {
+      "path": "media/kanreki-search.mp4",
+      "bytes": 21031108
+    },
+    {
+      "path": "media/kanreki-search.webm",
+      "bytes": 20681924
+    },
+    {
+      "path": "privacy/index.html",
+      "bytes": 6592
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 85
+    },
+    {
+      "path": "sign-in/index.html",
+      "bytes": 4203
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 111
+    },
+    {
+      "path": "social-preview.png",
+      "bytes": 58810
+    },
+    {
+      "path": "social-preview.svg",
+      "bytes": 1173643
+    },
+    {
+      "path": "terms/index.html",
+      "bytes": 5935
+    },
+    {
+      "path": "url-icon.png",
+      "bytes": 879720
+    }
+  ]
+}
