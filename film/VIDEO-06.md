@@ -1,0 +1,15 @@
+# Video 6 — Community, connections and closing identity
+
+Owner approved the complete film and authorised closing-section integration, staging, commit and push. Videos 1–5 remain unchanged.
+
+The 52-second 1080p60 composition lives in `film/src/video6/`. It reuses the approved navigation rail, primary avatar, wordmark, icon set, post/feed components, panel surfaces, cursor and smooth motion helpers. All eleven supplied portraits and three profile-post images are retained byte-for-byte; their actual JPEG format is detected despite `.png` filenames. `film/video-06-assets.json` centralises mapping. The portrait names and metadata are fictional demonstration identities.
+
+Malik Hayes is the same person in the incoming message, inbox, conversation, full profile, standalone identity and community. Eleven distinct messages are clamped to one line; scrolling reveals all eleven senders. Following changes only the button and Malik's follower total from 1,248 to 1,249. The three square image posts remain unchanged.
+
+The four prominent identities occupy real fixed coordinates on a single virtual canvas. Seven additional unique people form the core; two irregular outer rings bring the total to fifty. The camera travels through that canvas and withdraws to reveal its surroundings. Descriptions, usernames and counts fade before they become unreadable, while portraits grow in local coordinates to remain recognisable at the wide scale. Repeated photos occupy the outer field. The layout and portrait mapping never change randomly between frames.
+
+Points replace the portraits at their existing centres. Twenty-four restrained connections follow those positions as they converge towards fifty positions sampled from the original icon's dark pixels. The final shape resolves into the actual `url-icon.png`, not a substitute silhouette. The masked wordmark and exact tagline then appear. A short identity-to-header return brings back Home and joins the opening. The returning brand identity hands off to the workspace avatar and wordmark once aligned; duplicate identity layers are hidden during that handoff.
+
+Render: `node film/render-video-06.mjs proof`; targeted `inbox`, `profile`, `community` or `brand` modes; `all` for the full master. Export: `node film/export-video-06.mjs`. Ignored output is under `film/output/video-06/`: moving proofs, complete master, MP4, WebM, final-identity desktop/mobile PNG posters, validation and standalone `preview.html`.
+
+`film/video-06-review.html` provides a review of the future closing-section integration alongside the integrated homepage. The real HTML links are outside the media layer, occupy reserved space, and appear after an observed natural loop with a fully played range. They remain available on later loops. Reduced motion, mobile closing-mode fallback and playback failure reveal them immediately alongside the final-identity poster. Routes remain `/sign-in` and `/create-account`, with the existing public-access restriction notice. The approved homepage closing section now uses these exports and the same natural-playback gate, with reserved space for both account links.

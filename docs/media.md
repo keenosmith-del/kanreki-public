@@ -40,3 +40,8 @@ The owner provisionally accepted the current 42-second, 1080p60 film for integra
 ## Section 5 search and saved film
 
 The owner-approved 36-second, 1080p60 film appears on the left with the HTML heading “search and saved content” and description “Search articles, photographs and people, filter results by content type, and save posts to return to later.” on the right. The outdated writing-assistance copy is removed. `/#search-saved` opens this section. MP4, WebM, desktop PNG and mobile static PNG are served from `/media/kanreki-search*`. Existing media behaviour supplies muted autoplay, native looping and mobile/reduced-motion poster fallback. Videos 1–4 retain their existing source, timing and exports. See `film/VIDEO-05.md`.
+
+
+## Approved closing film (Video 6)
+
+Section 6 uses `kanreki-community.mp4` and its WebM alternative, a 52-second silent 1920 × 1080, 60 fps film. Desktop and mobile PNG posters show the final identity. The real HTML sign-in and create-account links appear after a complete naturally played cycle and remain visible on subsequent loops; static mobile, reduced-motion and playback-failure fallbacks reveal them immediately. Public account access remains restricted. Editable source and the reproducible render/export workflow are documented in `film/VIDEO-06.md`.

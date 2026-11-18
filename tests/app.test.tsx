@@ -9,7 +9,7 @@ describe('public routes and navigation',()=>{
   it.each([['/','kanreki.'],['/about','A place for'],['/contact','Let’s talk.'],['/privacy','privacy'],['/terms','terms'],['/cookies','cookies'],['/unknown','This page isn’t here.'],['/api/users','This page isn’t here.']])('renders %s', (path,heading)=>{
     mount(path); expect(screen.getByRole('heading',{level:1}).textContent).toContain(heading);
   });
-  it('preserves six sections with five films integrated',()=>{
+  it('preserves six sections with six films integrated',()=>{
     const {container}=mount(); expect(container.querySelectorAll('.cinema-home>section')).toHaveLength(6);expect(container.querySelectorAll('[data-media-slot]')).toHaveLength(6);expect(container.querySelectorAll('.cinema-editorial video')).toHaveLength(4);
     const profileFilm=container.querySelector('#profiles video')! as HTMLVideoElement;expect(profileFilm.loop).toBe(true);expect(profileFilm.muted).toBe(true);expect(profileFilm.querySelector('source')?.getAttribute('src')).toBe('/media/kanreki-profiles-r03.mp4');expect(screen.getByRole('heading',{name:'profiles and feed interactions'})).toBeTruthy();
     const drafting=container.querySelector('#drafting')!;

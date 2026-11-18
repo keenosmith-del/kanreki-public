@@ -34,7 +34,7 @@ describe('hero first playback cycle',()=>{
   });
   it('preserves the hero and keeps all four feature films active',()=>{
     expect(media.introduction.loop).toBe(true);
-    expect(media.introduction.src).toBe('/media/kanreki-hero.mp4');expect(media.feed.src).toBe('/media/kanreki-profiles-r03.mp4');expect(media.feed.loop).toBe(true);expect(media.profile.src).toBe('/media/kanreki-reading.mp4');expect(media.social.src).toBe('/media/kanreki-drafting.mp4');expect(media.writing.src).toBe('/media/kanreki-search.mp4');expect(media.closing).not.toHaveProperty('src');
+    expect(media.introduction.src).toBe('/media/kanreki-hero.mp4');expect(media.feed.src).toBe('/media/kanreki-profiles-r03.mp4');expect(media.feed.loop).toBe(true);expect(media.profile.src).toBe('/media/kanreki-reading.mp4');expect(media.social.src).toBe('/media/kanreki-drafting.mp4');expect(media.writing.src).toBe('/media/kanreki-search.mp4');expect(media.closing.src).toBe('/media/kanreki-community.mp4');
     expect(media.social.loop).toBe(true);expect(media.writing.loop).toBe(true);expect(media.closing.loop).toBe(true);
   });
 });

@@ -9,8 +9,8 @@ function useMediaQuery(query:string) {
   return matches;
 }
 /** Native looping never remounts a playing video. Completion is observed at playback wrap. */
-export function MediaSlot({ spec, children, className = '', onFirstCycle, onFallback }: {
-  spec:MediaSpec; children?:ReactNode; className?:string; onFirstCycle?:()=>void; onFallback?:()=>void;
+export function MediaSlot({ spec, children, className = '', onFirstCycle, onFallback, requireFullPlayback = false }: {
+  spec:MediaSpec; children?:ReactNode; className?:string; onFirstCycle?:()=>void; onFallback?:()=>void; requireFullPlayback?:boolean;
 }) {
   const reduced=useMediaQuery('(prefers-reduced-motion: reduce)');
   const narrow=useMediaQuery('(max-width: 760px)');
@@ -28,7 +28,12 @@ export function MediaSlot({ spec, children, className = '', onFirstCycle, onFall
     const timer=window.setTimeout(()=>{if(!video.current||video.current.paused){setFailed(true);setPlaying(false);}},12000);
     return()=>window.clearTimeout(timer);
   },[staticOnly,reduced,narrow]);
-  function finish() {if(!completed.current){completed.current=true;callbacks.current.onFirstCycle?.();}}
+  function fullyPlayed() {
+    const el=video.current;if(!el)return false;
+    for(let i=0;i<el.played.length;i++)if(el.played.start(i)<.25&&el.played.end(i)>=el.duration-.1)return true;
+    return false;
+  }
+  function finish() {if(requireFullPlayback&&!fullyPlayed())return;if(!completed.current){completed.current=true;callbacks.current.onFirstCycle?.();}}
   function samplePlayback() {
     const el=video.current;if(!el||el.seeking||!Number.isFinite(el.duration)||el.duration<=0)return;
     // loop videos skip ended; observe actual decoded playback crossing the boundary.

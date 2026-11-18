@@ -1,0 +1,114 @@
+{
+  "user1": {
+    "file": "community-user-01.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 341,
+    "height": 512
+  },
+  "user2": {
+    "file": "community-user-02.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 743,
+    "height": 821
+  },
+  "user3": {
+    "file": "community-user-03.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 981
+  },
+  "user4": {
+    "file": "community-user-04.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 750,
+    "height": 1200
+  },
+  "user5": {
+    "file": "community-user-05.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 1080,
+    "height": 1620
+  },
+  "user6": {
+    "file": "community-user-06.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 883,
+    "height": 1200
+  },
+  "user7": {
+    "file": "community-user-07.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 920
+  },
+  "user8": {
+    "file": "community-user-08.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 1061
+  },
+  "user9": {
+    "file": "community-user-09.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 640,
+    "height": 960
+  },
+  "user10": {
+    "file": "community-user-10.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 1104
+  },
+  "user11": {
+    "file": "community-user-11.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 736,
+    "height": 981
+  },
+  "post1": {
+    "file": "community-post-01.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 735,
+    "height": 919
+  },
+  "post2": {
+    "file": "community-post-02.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 1200,
+    "height": 1649
+  },
+  "post3": {
+    "file": "community-post-03.png",
+    "minWidth": 128,
+    "minHeight": 128,
+    "codec_name": "mjpeg",
+    "width": 1080,
+    "height": 1350
+  }
+}

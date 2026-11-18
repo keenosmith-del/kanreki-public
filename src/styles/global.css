@@ -31,3 +31,11 @@
 .cinema-copy .feature-cta{margin-top:28px}
 .cinema-editorial--media-left>.media-slot{order:-1}
 @media(min-width:901px){.cinema-editorial--media-left{grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr)}}
+
+/* Reserve account-control space while the closing film completes its first cycle. */
+.persistent-closing{display:flex;flex-direction:column;align-items:center}
+.persistent-closing .closing-media{flex:1;min-height:0;height:auto;overflow:hidden}
+.closing-access{flex:none;text-align:center;padding-top:12px}
+.closing-account-actions{display:flex;align-items:center;justify-content:center;gap:12px;min-height:52px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .3s ease,transform .3s ease,visibility .3s}
+.closing-account-actions.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.closing-account-actions{transition:none;transform:none}}

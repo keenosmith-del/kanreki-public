@@ -13,12 +13,14 @@ const features = [
 export function Home() {
   const {hash}=useLocation();
   useEffect(()=>{
-    if(!['#profiles','#drafting','#reading','#search-saved'].includes(hash))return;
+    if(!['#profiles','#drafting','#reading','#search-saved','#closing'].includes(hash))return;
     const timer=window.setTimeout(()=>document.getElementById(hash.slice(1))?.scrollIntoView({block:'start'}),150);
     return()=>window.clearTimeout(timer);
   },[hash]);
   const [accountReady,setAccountReady]=useState(false);
   const revealAccounts=useCallback(()=>setAccountReady(true),[]);
+  const [closingReady,setClosingReady]=useState(false);
+  const revealClosing=useCallback(()=>setClosingReady(true),[]);
   return <div className="cinema-home">
     <section className="introduction" aria-labelledby="intro-title">
       <h1 id="intro-title" className="cinema-sr">kanreki.</h1>
@@ -28,6 +30,18 @@ export function Home() {
       </div>
     </section>
     {features.map(f => <section key={f.spec.id} id={f.spec.id==='feed'?'profiles':f.spec.id==='social'?'drafting':f.spec.id==='profile'?'reading':f.spec.id==='writing'?'search-saved':undefined} className={`cinema-editorial${['social','writing'].includes(f.spec.id)?' cinema-editorial--media-left':''}`} aria-labelledby={`${f.spec.id}-title`}><div className="cinema-copy"><h2 id={`${f.spec.id}-title`}>{f.title}</h2><p>{f.description}</p>{f.cta && <Link className="button feature-cta" to="/create-account">{f.cta}</Link>}</div><MediaSlot key={'src' in f.spec&&typeof f.spec.src==='string'?f.spec.src:f.spec.id} spec={f.spec} /></section>)}
-    <section className="persistent-closing" aria-labelledby="closing-title"><MediaSlot spec={media.closing} className="closing-media"><div className="persistent-closing-content"><h2 id="closing-title"><Brand /></h2><p>Read something new.<br className="mobile-break" /> Write something of your own.</p><Link className="button" to="/create-account">account access</Link><span className="access-note">Public registration is not yet open.</span></div></MediaSlot></section>
+    <section id="closing" className="persistent-closing" aria-labelledby="closing-title">
+      <h2 id="closing-title" className="cinema-sr">kanreki. read. write. everything.</h2>
+      <MediaSlot spec={media.closing} className="closing-media" requireFullPlayback onFirstCycle={revealClosing} onFallback={revealClosing}>
+        <div className="persistent-closing-content"><Brand /><p>read. write. everything.</p></div>
+      </MediaSlot>
+      <div className="closing-access">
+        <div className={`closing-account-actions${closingReady?' is-visible':''}`} aria-hidden={!closingReady}>
+          <Link className="button" to="/sign-in" tabIndex={closingReady?0:-1}>sign in</Link>
+          <Link className="button" to="/create-account" tabIndex={closingReady?0:-1}>create account</Link>
+        </div>
+        <span className="access-note">Public registration is not yet open.</span>
+      </div>
+    </section>
   </div>;
 }

@@ -1,0 +1,7 @@
+import {Cursor,ink} from '../ui';
+import {p} from '../timeline';
+import {stateAt,cameraAt,cursorAt} from './timeline';
+import {Workspace,Incoming,Identity,Community,ConnectedPoints,BrandClosing,CanvasFeather} from './components';
+import {featured} from './content';
+import {nodes} from './community';
+export function Video6({frame}:{frame:number}){const s=stateAt(frame),camera=cameraAt(s.t),cursor=cursorAt(s.t);return <div data-video-six style={{position:'relative',width:1920,height:1080,background:'#fff',color:ink,fontFamily:'"Helvetica Neue",Helvetica,Arial,sans-serif',overflow:'hidden'}}><style>{'[data-video-six] img{display:block}[data-video-six] [data-liked="false"] [data-control="heart"] svg{fill:none}'}</style><div data-camera style={{position:'absolute',width:1920,height:1080,transformOrigin:'0 0',transform:`translate(${960-camera.x*camera.scale}px,${540-camera.y*camera.scale}px) scale(${camera.scale})`}}>{s.t<26.3&&<div style={{opacity:1-s.retract,transform:`translateX(${-s.retract*35}px)`}}><Workspace s={s}/><Incoming s={s}/></div>}{s.t>=17.45&&s.t<25&&<Identity person={featured} node={nodes[0]} s={s}/>} {s.t>=25&&s.t<46.4&&<Community s={s}/>}<ConnectedPoints s={s}/><Cursor x={cursor.x} y={cursor.y} click={s.click} opacity={s.cursorOpacity}/></div>{s.t>=50.5&&<div data-loop-home style={{position:'absolute',inset:0,opacity:p(s.t,50.8,51.6)}}><Workspace s={s} reset/></div>}<BrandClosing s={s}/><CanvasFeather/></div>}
