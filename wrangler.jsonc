@@ -1,4 +1,20 @@
 {
   "name": "kanreki-public",
-  "pages_build_output_dir": "./dist"
+  "pages_build_output_dir": "./dist",
+  "vars": {
+    "DEPLOYMENT_ENV": "production",
+    "SITE_URL": "https://kanreki-public.pages.dev",
+    "SITE_ORIGIN_VERIFIED": "true",
+    "NODE_VERSION": "24"
+  },
+  "env": {
+    "preview": {
+      "vars": {
+        "DEPLOYMENT_ENV": "preview",
+        "SITE_URL": "",
+        "SITE_ORIGIN_VERIFIED": "false",
+        "NODE_VERSION": "24"
+      }
+    }
+  }
 }

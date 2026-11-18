@@ -35,6 +35,6 @@ ${url?`<link rel="canonical" href="${url}"/>`:''}<meta property="og:type" conten
  const indexable=Object.keys(pages).filter(path=>pageMetadata(path).index&&canonical(path));
  await writeFile(dist+'/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map(path=>`  <url><loc>${canonical(path)}</loc></url>`).join('\n')}\n</urlset>\n`);
  await writeFile(dist+'/robots.txt',`User-agent: *\nAllow: /\n${site.production?`\nSitemap: ${site.origin}/sitemap.xml\n`:'# Preview: indexing is disabled in HTML and response headers.\n'}`);
- await writeFile(dist+'/build-info.json',JSON.stringify({...site,contactConfigured,indexable,sourceCommit,sourceFingerprint:fingerprint},null,2));
+ await writeFile(dist+'/build-info.json',JSON.stringify({...site,contactConfigured,indexable,sourceCommit,sourceFingerprint:fingerprint,deploymentBranch:process.env.CF_PAGES_BRANCH||null},null,2));
  console.log(`Prerendered 8 routes and HTTP 404; ${site.environment}; ${indexable.length} sitemap URLs.`);
 }finally{await server.close()}

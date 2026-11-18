@@ -1,3 +1,7 @@
+## Production build configuration correction
+
+The first authorized production build still generated preview HTML. Its actual Cloudflare build log reported no build variables loaded from the existing Wrangler file, even though the project API stored production values. Because Pages treats that file as its configuration source, the verified non-sensitive origin/indexing settings now live in wrangler.jsonc, with explicit safe preview overrides. EmailJS identifiers remain private project settings, absent from the repository. The build records its actual CF_PAGES_BRANCH for diagnosis. Production and preview configuration are covered by a regression test; no branch-preview guard was removed. A fresh GitHub deployment and live verification follow this correction.
+
 # Current production authorization | 18 November 2026
 
 The owner approved finalized public-site disclosures based on confirmed personal operation and the newly adopted manual retention policy, and separately accepted the existing shared EmailJS configuration without origin allowlisting. Production settings are DEPLOYMENT_ENV=production, SITE_URL=https://kanreki-public.pages.dev, SITE_ORIGIN_VERIFIED=true and NODE_VERSION=24. Shared identifiers and preview environment settings are preserved. No subscription, DNS, custom domain, kailor configuration or shared template change was made.

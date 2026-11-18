@@ -1,3 +1,7 @@
+## Production build configuration correction
+
+The first authorized production build still generated preview HTML. Its actual Cloudflare build log reported no build variables loaded from the existing Wrangler file, even though the project API stored production values. Because Pages treats that file as its configuration source, the verified non-sensitive origin/indexing settings now live in wrangler.jsonc, with explicit safe preview overrides. EmailJS identifiers remain private project settings, absent from the repository. The build records its actual CF_PAGES_BRANCH for diagnosis. Production and preview configuration are covered by a regression test; no branch-preview guard was removed. A fresh GitHub deployment and live verification follow this correction.
+
 # Authorized production launch | 18 November 2026
 
 The owner confirmed personal-capacity operation by Keeno Smith, no separately registered entity or dedicated business/postal address, and a newly adopted manual enquiry retention policy: 12 months after the last relevant correspondence, quarterly review and deletion from the shared mailbox when no longer required, subject to legal obligations. The owner explicitly accepted the residual abuse/quota risk of shared EmailJS identifiers without domain allowlisting and instructed publication and production indexing. The legal pages now carry an effective date of 18 November 2026 and no draft banner. No automated deletion, company registration, corporate address or independent legal review is claimed.
