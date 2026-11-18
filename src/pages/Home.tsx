@@ -24,7 +24,7 @@ export function Home() {
   return <div className="cinema-home">
     <section className="introduction" aria-labelledby="intro-title">
       <h1 id="intro-title" className="cinema-sr">kanreki.</h1>
-      <MediaSlot spec={media.introduction} className="hero-media" onFirstCycle={revealAccounts} onFallback={revealAccounts}><div className="hero-static-lockup"><Brand /><p>read. write. everything.</p><span>Publish articles, share photographs and join conversations around what interests you.</span></div></MediaSlot>
+      <MediaSlot spec={media.introduction} className="hero-media" onFirstCycle={revealAccounts} onFallback={revealAccounts}><div className="hero-static-lockup"><Brand /><p>read. write. everything.</p><span>Publish articles, share images and post updates in one feed.</span></div></MediaSlot>
       <div className={`hero-account-actions${accountReady?' is-visible':''}`} aria-hidden={!accountReady}>
         <Link className="button" to="/create-account" tabIndex={accountReady?0:-1}>account access</Link>
       </div>
@@ -40,7 +40,6 @@ export function Home() {
           <Link className="button" to="/sign-in" tabIndex={closingReady?0:-1}>sign in</Link>
           <Link className="button" to="/create-account" tabIndex={closingReady?0:-1}>create account</Link>
         </div>
-        <span className="access-note">Public registration is not yet open.</span>
       </div>
     </section>
   </div>;

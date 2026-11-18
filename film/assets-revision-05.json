@@ -1,0 +1,79 @@
+{
+  "icon": {
+    "file": "url-icon.png",
+    "role": "Official supplied kanreki icon",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "primary": {
+    "file": "avatar.png",
+    "name": "Keeno Smith",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "contributor1": {
+    "file": "new-user-01.png",
+    "name": "Mara Ellis",
+    "fictionalDisplayName": true,
+    "minWidth": 128,
+    "minHeight": 128
+  },
+  "contributor2": {
+    "file": "new-user-02.png",
+    "name": "Nina Lane",
+    "fictionalDisplayName": true,
+    "minWidth": 128,
+    "minHeight": 128
+  },
+  "contributor3": {
+    "file": "new-user-03.png",
+    "name": "Alex Reed",
+    "fictionalDisplayName": true,
+    "minWidth": 128,
+    "minHeight": 128
+  },
+  "post1": {
+    "file": "post-01.png",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "post2": {
+    "file": "post-02.png",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "workspaceReference": {
+    "file": "workspace-reference.png",
+    "referenceOnly": true,
+    "minWidth": 800,
+    "minHeight": 400
+  },
+  "feedReference": {
+    "file": "feed-reference.png",
+    "referenceOnly": true,
+    "minWidth": 800,
+    "minHeight": 400
+  },
+  "post3": {
+    "file": "post-03.png",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "createdPost": {
+    "file": "create-post-image-01.png",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "reservePost4": {
+    "file": "post-04.png",
+    "role": "Supplied reserve; not used in the approved three-post sequence",
+    "minWidth": 256,
+    "minHeight": 256
+  },
+  "reservePost5": {
+    "file": "post-05.png",
+    "role": "Supplied reserve; not used in the approved three-post sequence",
+    "minWidth": 256,
+    "minHeight": 256
+  }
+}

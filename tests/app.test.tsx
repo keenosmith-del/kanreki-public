@@ -89,3 +89,17 @@ describe('future media lifecycle',()=>{
     const {container}=render(<MediaSlot spec={{...spec,kind:'image',src:'/test.webp'}}/>);fireEvent.error(container.querySelector('img')!);expect(container.querySelector('img')).toBeNull();expect(screen.getByText('film pending')).toBeTruthy();
   });
 });
+
+describe('footer cleanup',()=>{
+  it('keeps the cookie link accessible with the same decorative icon as kailor',()=>{
+    const {container}=mount();const footer=container.querySelector('footer')!;
+    expect(within(footer).queryByRole('link',{name:'kailor'})).toBeNull();
+    expect(container.textContent).not.toContain('An independent publishing platform from the team behind');
+    expect(container.textContent).not.toContain('Public registration is not yet open.');
+    const cookies=within(footer).getByRole('link',{name:'cookies'});
+    expect(cookies.getAttribute('href')).toBe('/cookies');
+    expect(cookies.querySelector('svg')?.getAttribute('width')).toBe('14');
+    expect(cookies.querySelector('svg')?.getAttribute('aria-hidden')).toBe('true');
+    expect(cookies.querySelector('path')?.getAttribute('d')).toContain('M12 2a10 10');
+  });
+});

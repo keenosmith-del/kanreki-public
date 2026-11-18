@@ -364,3 +364,6 @@
 @media (max-width:340px){.site-header .site-header-brand{font-size:22px}.site-account-actions{gap:2px}.site-header .site-sign-up{padding:11px 12px;font-size:12px}.site-header .site-mobile-toggle{width:38px}}
 
 @media(max-width:390px){.site-header-brand .brand-text::after{width:.107142857em;height:.107142857em;margin-left:.071428571em}}
+
+.site-footer-legal a{gap:6px}
+.site-footer-legal svg{flex:none}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
+import {CookieIcon} from './CookieIcon';
 import { Brand } from './Brand';
 
 export const mainLinks = [
@@ -60,15 +61,15 @@ export function Header() {
   </header>;
 }
 export function LegalRow() {
-  return <div className="site-footer-bottom"><span>© {new Date().getFullYear()} kanreki</span><nav className="site-footer-legal" aria-label="legal">{['privacy', 'terms', 'cookies'].map(p => <Link key={p} to={`/${p}`}>{p}</Link>)}</nav></div>;
+  return <div className="site-footer-bottom"><span>© {new Date().getFullYear()} kanreki</span><nav className="site-footer-legal" aria-label="legal">{['privacy', 'terms', 'cookies'].map(p => <Link key={p} to={`/${p}`}>{p==='cookies'&&<CookieIcon/>}{p}</Link>)}</nav></div>;
 }
 export function Footer({ auth = false }: { auth?: boolean }) {
   if (auth) return <footer className="site-footer auth-footer"><div className="site-footer-inner"><LegalRow /></div></footer>;
   const groups = [
     { title: 'publication', links: mainLinks.slice(0, 2) },
     { title: 'account', links: [{ to: '/sign-in', label: 'sign in' }, { to: '/create-account', label: 'sign up' }] },
-    { title: 'connect', links: [...mainLinks.slice(2), { to: 'https://kailor.co.za/', label: 'kailor' }] },
+    { title: 'connect', links: mainLinks.slice(2) },
   ];
   return <footer className="site-footer cinema-footer"><div className="site-footer-inner"><div className="site-footer-groups">{groups.map(g => <nav key={g.title} aria-label={`${g.title} footer`} className="site-footer-group"><h2>{g.title}</h2>{g.links.map(l => <SiteLink key={l.to} to={l.to}>{l.label}</SiteLink>)}</nav>)}</div>
-    <p className="site-footer-description">An independent publishing platform from the team behind <a href="https://kailor.co.za/">kailor</a>.</p><LegalRow /></div></footer>;
+    <LegalRow /></div></footer>;
 }

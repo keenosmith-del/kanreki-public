@@ -1,6 +1,6 @@
 # Public media slots
 
-Section 1 includes the corrected 60-second cinematic hero at 1920 × 1080 / 60 fps, with MP4, WebM and PNG posters. Section 2 includes the 38-second profiles film; Section 3 includes the approved 46-second drafting film; Section 4 includes the provisionally accepted 42-second reading film; Section 5 includes the approved 36-second search film; the closing film remains deferred. All slots live in `src/media.ts`.
+Section 1 includes the corrected 60-second cinematic hero at 1920 × 1080 / 60 fps, with MP4, WebM and PNG posters. Section 2 includes the 38-second profiles film; Section 3 includes the approved 46-second drafting film; Section 4 includes the provisionally accepted 42-second reading film; Section 5 includes the approved 36-second search film; Section 6 includes the approved 52-second community closing film. All slots live in `src/media.ts`.
 
 | Slot | Path / proposed path | Suggested size | Ratio | Playback |
 | --- | --- | --- | --- | --- |
@@ -17,7 +17,7 @@ The video component requests `play()` once on loaded data, sets muted/playsInlin
 
 ## Section 1 cinematic hero implementation
 
-The introduction now has editable React film source and rendering tools in `film/`. See `film/REVISION-04.md` for the current production and verification. Its intended production paths are `public/media/kanreki-hero.mp4`, `kanreki-hero.webm`, `kanreki-hero-poster.png` and `kanreki-hero-mobile.png`.
+The introduction now has editable React film source and rendering tools in `film/`. See `film/REVISION-05.md` for the current production and verification. Its intended production paths are `public/media/kanreki-hero.mp4`, `kanreki-hero.webm`, `kanreki-hero-poster.png` and `kanreki-hero-mobile.png`.
 
 The introduction uses `loop: true`. The profiles film is also integrated into Section 2; the drafting film is integrated into Section 3; the reading film is integrated into Section 4; the search film is integrated into Section 5; the closing media manifest retains its existing value. Production paths are activated in `src/hero-production.json` after successful full-render validation. No broken production URLs are emitted while files are absent.
 
@@ -35,7 +35,7 @@ The owner-approved 46-second, 1080p60 film plays on the left, with the HTML head
 
 ## Section 4 reading film
 
-The owner provisionally accepted the current 42-second, 1080p60 film for integration. The exact heading “reading articles and discussions” and approved description appear on the left, with the film on the right. `/#reading` opens the section. MP4, WebM, desktop PNG and mobile static PNG are served from `/media/kanreki-reading*`. The existing component handles muted autoplay, looping, reduced motion and mobile poster fallback. Motion glitches reported by the owner remain deferred work for Video 4, along with a later correction pass for Video 1. See `film/VIDEO-04.md`.
+The owner provisionally accepted the current 42-second, 1080p60 film for integration. The exact heading “reading articles and discussions” and approved description appear on the left, with the film on the right. `/#reading` opens the section. MP4, WebM, desktop PNG and mobile static PNG are served from `/media/kanreki-reading*`. The existing component handles muted autoplay, looping, reduced motion and mobile poster fallback. Video 4 Revision 02 corrects isolated capture tiles and softens the return transition; Video 1 Revision 05 is also locally integrated. See `film/VIDEO-04.md`.
 
 ## Section 5 search and saved film
 
@@ -45,3 +45,8 @@ The owner-approved 36-second, 1080p60 film appears on the left with the HTML hea
 ## Approved closing film (Video 6)
 
 Section 6 uses `kanreki-community.mp4` and its WebM alternative, a 52-second silent 1920 × 1080, 60 fps film. Desktop and mobile PNG posters show the final identity. The real HTML sign-in and create-account links appear after a complete naturally played cycle and remain visible on subsequent loops; static mobile, reduced-motion and playback-failure fallbacks reveal them immediately. Public account access remains restricted. Editable source and the reproducible render/export workflow are documented in `film/VIDEO-06.md`.
+
+
+## Video 1 Revision 05
+
+The locally activated 60-second hero now uses isolated `film/src/revision05/` source and `film/assets-revision-05.json`. Revision 04 remains separately reproducible and its previous production exports are preserved under `film/output/revision-05/original-revision-04/`. New photographs, plus controls, stable typing layout, three distinct comments and the like-count close-up are covered by revision-specific checks. Use the Revision 05 render/export/integration commands in its production note. Videos 2–6 are unchanged.
