@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-11-18T20:50:03.484Z",
+  "origin": "https://kanreki-public.pages.dev",
+  "states": [
+    {
+      "path": "/",
+      "localStorageKeys": [],
+      "sessionStorageKeys": []
+    },
+    {
+      "path": "/privacy",
+      "localStorageKeys": [],
+      "sessionStorageKeys": []
+    },
+    {
+      "path": "/terms",
+      "localStorageKeys": [],
+      "sessionStorageKeys": []
+    },
+    {
+      "path": "/cookies",
+      "localStorageKeys": [],
+      "sessionStorageKeys": []
+    },
+    {
+      "path": "/contact",
+      "localStorageKeys": [],
+      "sessionStorageKeys": []
+    }
+  ],
+  "cookieNames": [],
+  "setCookieResponses": [],
+  "requestOrigins": [
+    "https://kanreki-public.pages.dev"
+  ],
+  "limitation": "Fresh browser session, ordinary navigation and an unsent contact draft; no new provider email was submitted. Prior authenticated production send evidence separately verifies EmailJS metadata. Infrastructure challenge cookies can vary by request."
+}

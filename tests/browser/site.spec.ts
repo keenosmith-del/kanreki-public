@@ -24,8 +24,9 @@ for(const width of widths) {
 test('direct routes, refresh, links, status codes and metadata',async({page,request})=>{
   for(const route of ['/','/about','/contact','/sign-in','/create-account','/privacy','/terms','/cookies']) {
     const response=await page.goto(route);expect(response?.status()).toBe(200);await page.reload();await expect(page.locator('main h1')).toBeVisible();
-    await expect(page.locator('link[rel=canonical]')).toHaveCount(0);
-    await expect(page.locator('meta[name=robots]')).toHaveAttribute('content','noindex, follow');
+    const production=process.env.KANREKI_LIVE_MODE==='production';
+    if(production)await expect(page.locator('link[rel=canonical]')).toHaveAttribute('href',process.env.KANREKI_LIVE_URL+route);else await expect(page.locator('link[rel=canonical]')).toHaveCount(0);
+    await expect(page.locator('meta[name=robots]')).toHaveAttribute('content',production&&['/','/about','/contact'].includes(route)?'index, follow':'noindex, follow');
   }
   for(const route of ['/missing','/api/users','/src/main.tsx','/.env']){const response=await request.get(route);expect(response.status()).toBe(404);expect(await response.text()).toContain('This page isn’t here');}
   await page.goto('/');

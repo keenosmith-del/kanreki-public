@@ -1,3 +1,17 @@
+# Search Console and legal-publication review | 18 November 2026
+
+Google verified the URL-prefix property **https://kanreki-public.pages.dev/** using its issued HTML file, now preserved under public/. Cloudflare redirects the .html path to the same-origin extensionless resource; its exact content returns HTTP 200 and Google accepted the verification. The property overview is processing data. **No sitemap was submitted and no indexing was requested**, because the actual site remains noindex while material owner decisions are pending.
+
+The legal disclosures were expanded from verified implementation and provider documentation, retaining their draft notice. A fresh live browser storage audit found no cookies, localStorage or sessionStorage across home, legal and contact routes, including an unsent enquiry. Conditional Cloudflare challenge/security cookies are described separately; no optional tracking or cookie banner was added. Contact copy now states actual configured delivery rather than suggesting that delivery is unconfigured.
+
+Owner confirmation remains necessary for the responsible operator name and public service/postal address, the actual mailbox retention/deletion practice and relevant international-processing details. No registered business, address, fixed retention duration, Information Officer or lawyer review was invented. The owner was separately presented with the precise risk of public EmailJS identifiers without a domain allowlist: direct reuse can consume the shared quota or cause spam despite client-side controls and site CSP. No provider-risk acceptance has been fabricated. Current provider controls remain unchanged (3/200 requests used, locked Domains Save, no listed origins, non-browser API disabled).
+
+All seven required local commands passed for the current source fingerprint: npm ci, typecheck, 118 unit tests, build, build verification, browser tests with one worker and production audit (zero vulnerabilities). Preview and production live-browser assertions are now supported without weakening route/canonical expectations. The full release checker must still remain gated until real approvals and the fresh indexable deployment exist. See docs/verification/launch/ for actual storage, provider and Google verification evidence and the concrete legal review text.
+
+The existing live noindex configuration and all six films are preserved. Legal finalization, the effective publication date, production sitemap submission and indexing requests follow the outstanding owner facts and decision. This is not a declaration of legal compliance or Google indexing.
+
+---
+
 # Deployment status | 18 November 2026
 
 **Deployment live, release gated:** [https://kanreki-public.pages.dev/](https://kanreki-public.pages.dev/).

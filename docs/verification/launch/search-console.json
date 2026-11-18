@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-11-18T20:56:15.443182+00:00",
+  "property": "https://kanreki-public.pages.dev/",
+  "propertyType": "URL-prefix",
+  "ownership": "verified",
+  "method": "HTML file",
+  "verificationFile": "google5f979766b2c25bff.html",
+  "verificationFileContentVerified": true,
+  "verificationRedirect": "Cloudflare canonicalizes .html to the same-origin extensionless URL; Google ownership verification succeeded.",
+  "sitemapSubmitted": false,
+  "indexingRequested": [],
+  "actualIndexedStatus": "Not established; new property overview says processing data.",
+  "reason": "Waiting for the authorized indexable build after factual legal confirmation and provider-risk decision."
+}

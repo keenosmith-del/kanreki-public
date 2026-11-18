@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-18T17:52:45.583Z",
-  "sourceFingerprint": "fcd2ce6facb55c01389b8363936e40f6d6ef64a95f47a3a9b7becaf14b103a50",
+  "checkedAt": "2026-11-18T20:55:08.119Z",
+  "sourceFingerprint": "8684ec6608e7223e744a70643074fea564932ef6fd3c047f8bf178e8704e3ead",
   "commands": [
     {
       "command": "npm ci",
@@ -36,9 +36,7 @@
     {
       "command": "npm run test:browser -- --workers=1",
       "exitCode": 0,
-      "summary": [
-        "32 passed (55.3s)"
-      ]
+      "summary": []
     },
     {
       "command": "npm audit --omit=dev",
