@@ -1,3 +1,17 @@
+## Final Google verification result
+
+Google’s own live inspection successfully fetched https://kanreki-public.pages.dev/sitemap.xml at **23:18:43 SAST on 18 November 2026**. Crawl allowed: Yes; Page fetch: Successful; the tested SOURCE panel displays the exact XML containing the three intended URLs. Screenshots preserve both the successful fetch and fetched source. All three discovery pages also passed Google live eligibility tests. The separate Sitemaps report still shows **Couldn’t fetch / Unknown / 0 discovered pages** after one resubmission; that reporting/processing state is unresolved despite verified retrieval. No further speculative sitemap changes or repeated submissions were made. Manual homepage indexing request returned daily quota exceeded; no accepted manual request or actual indexing is claimed. There are no remaining owner publication or provider-risk approvals pending. Technical production release checks pass; outstanding Google processing and quotas are recorded transparently.
+
+# Live production status | 18 November 2026
+
+https://kanreki-public.pages.dev/ is deployed and indexable for home, About and Contact, with exact HTTPS canonicals and a valid advertised three-URL sitemap. Legal and account pages intentionally remain noindex. Owner-authorized legal notices are finalized with the newly adopted manual retention policy; provider-risk acceptance is recorded separately. No independent legal review or complete address-disclosure compliance is claimed.
+
+Production values must remain in wrangler.jsonc (Pages’ configuration source), with explicit noindex preview overrides. Dashboard-only plain variables did not reach the initial build. Keep shared EmailJS identifiers as project settings; never commit their values. Required local checks, live production browser checks and the release checker passed. All film assets and kailor resources are unchanged.
+
+Google URL-prefix ownership is verified, the sitemap is submitted, and Google live tests confirm all three discovery URLs can be indexed. Initial sitemap fetch reporting and the manual indexing daily-quota limit are recorded in docs/verification/launch/search-console.json; neither submission nor a live test proves actual indexing. Google decides that separately. Keep the ownership file deployed.
+
+---
+
 ## Production build configuration correction
 
 The first authorized production build still generated preview HTML. Its actual Cloudflare build log reported no build variables loaded from the existing Wrangler file, even though the project API stored production values. Because Pages treats that file as its configuration source, the verified non-sensitive origin/indexing settings now live in wrangler.jsonc, with explicit safe preview overrides. EmailJS identifiers remain private project settings, absent from the repository. The build records its actual CF_PAGES_BRANCH for diagnosis. Production and preview configuration are covered by a regression test; no branch-preview guard was removed. A fresh GitHub deployment and live verification follow this correction.

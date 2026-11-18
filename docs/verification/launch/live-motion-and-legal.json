@@ -1,0 +1,174 @@
+{
+  "checkedAt": "2026-11-18T21:11:34.129Z",
+  "origin": "https://kanreki-public.pages.dev",
+  "movies": [
+    {
+      "path": "/media/kanreki-hero.mp4",
+      "width": 1920,
+      "height": 1080,
+      "muted": true,
+      "loop": true,
+      "currentTime": 0.517117,
+      "duration": 60,
+      "error": null
+    },
+    {
+      "path": "/media/kanreki-profiles-r03.mp4",
+      "width": 1920,
+      "height": 1080,
+      "muted": true,
+      "loop": true,
+      "currentTime": 0.73288,
+      "duration": 38,
+      "error": null
+    },
+    {
+      "path": "/media/kanreki-drafting.mp4",
+      "width": 1920,
+      "height": 1080,
+      "muted": true,
+      "loop": true,
+      "currentTime": 0.174712,
+      "duration": 46,
+      "error": null
+    },
+    {
+      "path": "/media/kanreki-reading.mp4",
+      "width": 1920,
+      "height": 1080,
+      "muted": true,
+      "loop": true,
+      "currentTime": 0.199421,
+      "duration": 42,
+      "error": null
+    },
+    {
+      "path": "/media/kanreki-search.mp4",
+      "width": 1920,
+      "height": 1080,
+      "muted": true,
+      "loop": true,
+      "currentTime": 0.247005,
+      "duration": 36,
+      "error": null
+    },
+    {
+      "path": "/media/kanreki-community.mp4",
+      "width": 1920,
+      "height": 1080,
+      "muted": true,
+      "loop": true,
+      "currentTime": 0.227208,
+      "duration": 52,
+      "error": null
+    }
+  ],
+  "legal": [
+    {
+      "path": "/privacy",
+      "width": 1440,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/terms",
+      "width": 1440,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/cookies",
+      "width": 1440,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/privacy",
+      "width": 1280,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/terms",
+      "width": 1280,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/cookies",
+      "width": 1280,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/privacy",
+      "width": 768,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/terms",
+      "width": 768,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/cookies",
+      "width": 768,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/privacy",
+      "width": 390,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/terms",
+      "width": 390,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/cookies",
+      "width": 390,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/privacy",
+      "width": 320,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/terms",
+      "width": 320,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    },
+    {
+      "path": "/cookies",
+      "width": 320,
+      "effectiveDate": "Effective date: 18 November 2026.",
+      "draftBanner": false,
+      "overflow": false
+    }
+  ],
+  "pageErrors": []
+}

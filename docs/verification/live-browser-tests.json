@@ -1,7 +1,8 @@
 {
-  "checkedAt": "2026-11-18T20:34:57.828630+00:00",
+  "checkedAt": "2026-11-18T21:14:51.287479+00:00",
   "origin": "https://kanreki-public.pages.dev",
-  "command": "KANREKI_LIVE_URL=https://kanreki-public.pages.dev npx playwright test --config playwright.live.config.ts",
+  "mode": "production",
+  "command": "KANREKI_LIVE_URL=https://kanreki-public.pages.dev KANREKI_LIVE_MODE=production KANREKI_LEGAL_FINAL=true npx playwright test --config playwright.live.config.ts",
   "passed": 16,
   "failed": 0,
   "viewports": [
@@ -11,6 +12,6 @@
     390,
     320
   ],
-  "evidence": "Actual live HTTPS Playwright run: 16 passed (39.9s).",
-  "sourceFingerprint": "fcd2ce6facb55c01389b8363936e40f6d6ef64a95f47a3a9b7becaf14b103a50"
+  "evidence": "Actual live production run: 16 passed (1.1m).",
+  "sourceFingerprint": "27f875a7c9ceab3ef946a974a782ff8c37cdba2301841de3f54f7c44947a3788"
 }

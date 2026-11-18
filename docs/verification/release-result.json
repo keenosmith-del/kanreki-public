@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-11-18T20:36:20.378698+00:00",
-  "outcome": "Deployment live, release gated",
+  "checkedAt": "2026-11-18T21:14:51.286598+00:00",
+  "outcome": "Production launched and verified",
   "origin": "https://kanreki-public.pages.dev",
-  "outstanding": [
-    "Owner/legal review of working drafts",
-    "Owner decision on unavailable shared EmailJS domain allowlist",
-    "Fresh indexable production build after those approvals"
-  ],
-  "productionEmailInboxConfirmed": true,
-  "noindexRetained": true
+  "command": "npm run check:release",
+  "exitCode": 0,
+  "evidence": "Actual command output: Production launched and verified: all automated checks and recorded owner approvals pass.",
+  "testedSourceFingerprint": "27f875a7c9ceab3ef946a974a782ff8c37cdba2301841de3f54f7c44947a3788",
+  "releaseApprovals": "Explicit owner publication approval and separate provider-risk acceptance in this chat; no independent lawyer review claimed.",
+  "disclosureLimitation": "No dedicated public operator address exists; POPIA section 18(1)(b) address requirement is documented and not claimed fulfilled.",
+  "googleIndexing": "Separate Search Console evidence records submission and quota status; release eligibility is not proof of Google indexing.",
+  "googleProcessing": {
+    "ownershipVerified": true,
+    "sitemapSubmitted": true,
+    "googleXmlFetchVerified": true,
+    "allThreePageLiveTestsPass": true,
+    "sitemapsReport": "Could not fetch / Unknown; processing unresolved",
+    "manualIndexing": "Blocked by daily quota; not accepted",
+    "actualIndexingConfirmed": false
+  }
 }

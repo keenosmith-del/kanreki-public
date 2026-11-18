@@ -1,3 +1,33 @@
+## Final Google verification result
+
+Google’s own live inspection successfully fetched https://kanreki-public.pages.dev/sitemap.xml at **23:18:43 SAST on 18 November 2026**. Crawl allowed: Yes; Page fetch: Successful; the tested SOURCE panel displays the exact XML containing the three intended URLs. Screenshots preserve both the successful fetch and fetched source. All three discovery pages also passed Google live eligibility tests. The separate Sitemaps report still shows **Couldn’t fetch / Unknown / 0 discovered pages** after one resubmission; that reporting/processing state is unresolved despite verified retrieval. No further speculative sitemap changes or repeated submissions were made. Manual homepage indexing request returned daily quota exceeded; no accepted manual request or actual indexing is claimed. There are no remaining owner publication or provider-risk approvals pending. Technical production release checks pass; outstanding Google processing and quotas are recorded transparently.
+
+# Production launched and verified | 18 November 2026
+
+**Live indexable website: https://kanreki-public.pages.dev/**. Functional deployment `91ea58017225a429f8567c3a34bfbab31d211222` succeeded through the independent GitHub-connected Pages project. Production build output identifies branch main, verified HTTPS origin, configured EmailJS delivery and the same tested source fingerprint. A final documentation-only deployment may follow without changing that source/assets fingerprint; the live build-info.json identifies its exact commit.
+
+## Published disclosures and owner decisions
+
+Privacy, terms and cookies are published with **effective date 18 November 2026** and no draft notice. The owner confirmed personal operation by Keeno Smith, no separate legal entity or dedicated business/postal address, and newly adopted manual enquiry retention: 12 months after last relevant correspondence, quarterly review and mailbox deletion when no longer required, subject to applicable obligations. No automatic deletion or historical practice is claimed. The owner separately accepted the unchanged shared EmailJS setup without domain allowlisting and its abuse/quota risk. Provider settings, recipient, template and kailor services were not modified.
+
+POPIA section 18(1)(b) calls for responsible-party name and address. No dedicated public service address exists and residential disclosure was expressly prohibited. This remains a documented disclosure limitation, not certification of full compliance or an additional technical deployment gate. Publication was authorized by the owner; no independent legal review is claimed. Previous gates came from the earlier brief’s explicit release conditions, not Cloudflare or Google technical requirements. The owner’s later factual confirmations and explicit publication/risk decisions satisfy those recorded gates consistently within this website’s scope.
+
+## Verified production behaviour
+
+Home, About and Contact serve index/follow in both HTML and Cloudflare headers, one exact HTTPS canonical each and consistent Open Graph/Twitter metadata. Legal and account pages remain noindex by indexing policy. The live sitemap returns HTTP 200, parses as XML and contains exactly the three approved discovery URLs; robots.txt advertises it. CSP, nosniff, referrer policy, permissions policy and caching remain present; unknown routes return HTTP 404. The prior Wrangler build-variable conflict was corrected using source-controlled non-sensitive production variables with explicit safe preview overrides. Secrets remain in project settings.
+
+All required local commands passed: npm ci, typecheck, **122 unit tests**, build, build verification, browser tests with one worker and production dependency audit (**zero vulnerabilities**). **16 live production browser tests passed** at 1440, 1280, 768, 390 and 320 px. An additional actual moving-playback audit verified advancing currentTime for every film and finalized legal pages without overflow at all five widths. All six films, approved MP4s, posters and Remotion sources are unchanged. Every build asset meets the Pages size limit. **npm run check:release passed** against the live indexable deployment and real recorded owner approvals.
+
+Production enquiry delivery previously succeeded at this exact live origin, with owner inbox receipt confirmed on the same date; the enquiry code, shared identifiers, fixed recipient and CSP connection permission remain intact. No unnecessary second test email was sent during this iteration.
+
+## Google Search Console
+
+URL-prefix ownership is verified using Google’s issued HTML file, which remains deployed. Google’s own live tests for **home, About and Contact** each report **URL is available to Google / Page can be indexed**. The sitemap submission was accepted, but Google initially reported **Couldn’t fetch** despite valid HTTP 200 XML; one resubmission was requested after successful page live tests. Manual homepage indexing request was blocked by **daily quota exceeded**, so no accepted manual indexing request is claimed. Initial inspections showed all three URLs unknown/not indexed. Submission, eligibility and actual indexing are distinct. See docs/verification/launch/search-console.json and screenshots for the final observed processing status.
+
+No owner publication/security approvals remain pending. Google processing and request quotas are external outcomes; the site stays indexable. Sitemap retrieval must not be reported as successful unless its actual Search Console status changes. Earlier records below are preserved history.
+
+---
+
 ## Production build configuration correction
 
 The first authorized production build still generated preview HTML. Its actual Cloudflare build log reported no build variables loaded from the existing Wrangler file, even though the project API stored production values. Because Pages treats that file as its configuration source, the verified non-sensitive origin/indexing settings now live in wrangler.jsonc, with explicit safe preview overrides. EmailJS identifiers remain private project settings, absent from the repository. The build records its actual CF_PAGES_BRANCH for diagnosis. Production and preview configuration are covered by a regression test; no branch-preview guard was removed. A fresh GitHub deployment and live verification follow this correction.

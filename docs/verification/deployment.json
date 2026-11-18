@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-18T21:02:18.712212+00:00",
+  "checkedAt": "2026-11-18T21:12:31.206157+00:00",
   "account": {
     "pagesProjectListingSucceeded": true,
     "verifiedAgainstKailor": true,
@@ -30,8 +30,9 @@
   "kailorBaselineConfigSha256": "0daee42f2a37194a7eed421940db5a5c5ae16f14a76aeb3f2c98acdee8e0539f",
   "kailorUnchanged": true,
   "latestDeployment": {
-    "id": "9e6706c1-1f9f-48d7-a7a4-48dafcde1f22",
+    "id": "623660bb-ef38-4355-b876-d5d5308ff084",
     "status": "success",
-    "commit": "0510a7b869449b6ff24904562092ec4bffde43ce"
+    "commit": "91ea58017225a429f8567c3a34bfbab31d211222",
+    "trigger": "github:push"
   }
 }

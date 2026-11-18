@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-18T20:56:15.443182+00:00",
+  "checkedAt": "2026-11-18T21:20:18.997219+00:00",
   "property": "https://kanreki-public.pages.dev/",
   "propertyType": "URL-prefix",
   "ownership": "verified",
@@ -7,8 +7,47 @@
   "verificationFile": "google5f979766b2c25bff.html",
   "verificationFileContentVerified": true,
   "verificationRedirect": "Cloudflare canonicalizes .html to the same-origin extensionless URL; Google ownership verification succeeded.",
-  "sitemapSubmitted": false,
+  "sitemapSubmitted": true,
   "indexingRequested": [],
-  "actualIndexedStatus": "Not established; new property overview says processing data.",
-  "reason": "Waiting for the authorized indexable build after factual legal confirmation and provider-risk decision."
+  "actualIndexedStatus": "All three initial inspections: URL unknown to Google, not indexed. Live eligibility is not proof of indexing.",
+  "sitemapUrl": "https://kanreki-public.pages.dev/sitemap.xml",
+  "sitemapStatus": "Submitted successfully twice (one diagnostic resubmission); Sitemaps report still shows Could not fetch / Unknown / 0 discovered pages.",
+  "eligibleForIndexing": true,
+  "liveTests": {
+    "/": {
+      "result": "URL is available to Google",
+      "availability": "Page can be indexed"
+    },
+    "/about": {
+      "result": "URL is available to Google",
+      "availability": "Page can be indexed"
+    },
+    "/contact": {
+      "result": "URL is available to Google",
+      "availability": "Page can be indexed"
+    }
+  },
+  "manualRequestAttempt": {
+    "path": "/",
+    "accepted": false,
+    "result": "Quota exceeded: daily quota; Google asks to try again tomorrow."
+  },
+  "otherManualRequests": "Not repeated after explicit account-wide daily quota response.",
+  "sitemapLiveFetch": {
+    "result": "Successful",
+    "testedLocalTime": "2026-11-18T23:18:43+02:00",
+    "crawler": "Google Inspection Tool smartphone",
+    "crawlAllowed": true,
+    "retrievedExactXmlSource": true,
+    "sourceUrls": [
+      "https://kanreki-public.pages.dev/",
+      "https://kanreki-public.pages.dev/about",
+      "https://kanreki-public.pages.dev/contact"
+    ],
+    "evidence": [
+      "google-sitemap-live-fetch.png",
+      "google-sitemap-fetched-source.png"
+    ],
+    "interpretation": "Actual Google retrieval succeeded; the separate Sitemaps processing/reporting status has not resolved. No claim that Google processed or indexed sitemap contents."
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-18T21:15:58.932542+00:00",
+  "url": "https://kanreki-public.pages.dev/sitemap.xml",
+  "httpStatus": 200,
+  "validXml": true,
+  "urls": [
+    "https://kanreki-public.pages.dev/",
+    "https://kanreki-public.pages.dev/about",
+    "https://kanreki-public.pages.dev/contact"
+  ],
+  "robotsAdvertisesSitemap": true
+}
