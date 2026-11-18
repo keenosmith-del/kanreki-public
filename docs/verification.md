@@ -1,18 +1,9 @@
-# kanreki rebrand verification — 16 November 2026
+# kanreki | current verification
 
-| Command / check | Result |
-| --- | --- |
-| `npm run typecheck` | Passed |
-| `npm test` | Passed: 21 tests |
-| `npm run build` | Passed: eight static routes plus custom 404 |
-| `npm run check:build` | Passed: six sections/slots, brand, icon bytes, metadata, empty sitemap, publisher/year, CSP and private/stale-reference scan |
-| `CF_PAGES_URL=https://kanreki-preview-check.pages.dev npm run build` and matching build audit | Passed; test hostname only, no deployment or DNS action |
-| `npm run test:browser` | Blocked before browser tests: sandbox `listen EPERM: operation not permitted 127.0.0.1:4173` |
-| Supplied icon | Exact original copied; production bytes match public asset; PNG declaration and MIME type configured |
-| Reference source | Read-only inspection of neighbouring kailor public wordmark/navigation styles |
+See [final corrections and evidence](predeployment.md) and [deployment configuration](deployment.md).
 
-A pre-existing React Router module-level `use client` bundler warning remains non-fatal. No browser screenshots or rendered visual/console results are claimed. Browser tests cover 1440, 1280, 768, 390 and 320px layouts, disabled account forms, menus/focus, route refreshes, noindex, optional canonicals, PNG response, storage, 404s and reduced motion. A short 1280 × 650 account layout is also covered.
+Final checks: **107 unit tests** and **32 browser tests** pass. Typecheck, normal build, production-mode local fixture build, output verification and the complete static-asset audit pass. The audit covers 43 files, all below 25 MiB. The three authorized VP9 deliveries are each below 24 MiB, retain 1080p60 and exact frame/timestamp sequences, and decode completely. Their original files remain outside the public deployment output; MP4s, posters and Remotion source are unchanged.
 
-Run `npm run build`, `npm run check:build` and `npm run test:browser` in a normal terminal with loopback access and Chromium installed (`npx playwright install chromium` if needed). Inspect the screenshots written under docs/verification before calling mobile/desktop layout and console behaviour verified. These QA captures are separate from future platform-media assets.
+Actual kailor/kanreki modal screenshots and computed values match at 1440, 768, 390 and 320 px. Visual regressions protect initial, focused and validation states; source-reference sending-state comparisons use mocked requests. One actual shared EmailJS request was verified OK in provider history, including subject and parameter mapping, and the owner confirmed inbox receipt.
 
-With no configured deployment origin, no canonical or Open Graph URL is emitted. SITE_URL or CF_PAGES_URL configures the actual deployment origin without enabling indexing. All routes stay noindex and the sitemap stays empty. The future domains are not configured or presumed live. No deployment, DNS, commit or push was performed.
+Release checks intentionally fail for actual external gates only: refreshed Cloudflare Pages authorization, a real verified production hostname, the shared account's locked production-origin controls and owner/legal review. Nothing was pushed or deployed. Full evidence, exact sizes, hashes and command results are linked from `docs/predeployment.md`.

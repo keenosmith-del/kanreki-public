@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Indexing is disabled by HTML and X-Robots-Tag on every route.
-# Crawling remains allowed so search engines can read noindex.
+# Build output adds the sitemap only for verified production builds.

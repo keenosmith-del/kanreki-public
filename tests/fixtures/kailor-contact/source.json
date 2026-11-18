@@ -1,0 +1,15 @@
+{
+  "source": "kailor current local production implementation",
+  "captured": "2026-11-18",
+  "sha256": {
+    "../kailor/frontend/src/components/public/SurfaceDialog/SurfaceDialog.css": "65cef1d68ace09ae28bee77bbee6028f4aeeda6c8c224d312ab67f98f699dbaf",
+    "../kailor/frontend/src/components/public/ConversationModal/ConversationModal.css": "6dd203908d5d1965c6f2d4a38c849025ac643c2eb5c80c1ae9c0a58b45345a12"
+  },
+  "templateParameters": [
+    "from_name",
+    "reply_to",
+    "form_type",
+    "subject",
+    "message"
+  ]
+}

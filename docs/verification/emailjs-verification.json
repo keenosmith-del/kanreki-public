@@ -1,0 +1,38 @@
+{
+  "checkedOn": "2026-11-18",
+  "sharedServiceMatchesKailor": true,
+  "sharedTemplateMatchesKailor": true,
+  "sharedPublicKeyMatchesKailor": true,
+  "recipient": "Existing fixed recipient verified in the provider; address intentionally omitted",
+  "subjectParameter": "kanreki website enquiry",
+  "templateSubject": "Portfolio Contact \u2014 {{subject}}",
+  "templateBodyVariables": [
+    "name",
+    "email",
+    "subject",
+    "message"
+  ],
+  "templateReplyToVariable": "reply_to",
+  "hardCodedSenderLabel": "kailor website",
+  "providerSettingsChanged": false,
+  "liveRequest": {
+    "status": "OK",
+    "provider": "Zoho",
+    "localTimestamp": "18/11/2026, 18:38:42",
+    "originVerifiedInHistory": "http://127.0.0.1:4175/",
+    "sendProcessSeconds": 1.328,
+    "verifiedParameters": [
+      "from_name",
+      "reply_to",
+      "name",
+      "email",
+      "form_type",
+      "subject",
+      "message"
+    ],
+    "inboxReceipt": "confirmed received by owner in this chat",
+    "inboxConfirmed": true
+  },
+  "originControls": "Domains panel has no configured origins displayed and its controls are locked under the current account plan. No settings were changed. Owner must authorize any plan/configuration changes after the real production origin exists.",
+  "brandingDecision": "Same template retained unchanged. Optional neutral sender/body branding requires owner approval; no shared template edits were made."
+}

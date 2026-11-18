@@ -1,0 +1,258 @@
+.surface-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 30px !important;
+  width: min(520px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100svh - 48px);
+  background: #fff !important;
+  color: #151517;
+  box-shadow: 0 24px 80px #15151718;
+  font-family:
+    -apple-system, BlinkMacSystemFont, Inter, "Helvetica Neue", sans-serif;
+  animation: surface-enter 0.22s ease;
+  overflow: hidden;
+}
+.surface-dialog::backdrop {
+  background: #15151720;
+  backdrop-filter: blur(7px);
+}
+.surface-scroll {
+  padding: 38px;
+  max-height: calc(100svh - 48px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d1d3 transparent;
+}
+.surface-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.surface-scroll::-webkit-scrollbar-thumb {
+  background: #d1d1d3;
+  border-radius: 4px;
+}
+.surface-dialog h2 {
+  font-size: 26px;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 32px 26px 0;
+}
+.surface-dialog .surface-close {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  min-height: 0;
+  padding: 6px;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  color: #77777c;
+  box-shadow: none;
+  cursor: pointer;
+  transform: none;
+}
+.surface-close:hover {
+  color: #151517;
+}
+.surface-dialog :focus-visible {
+  outline: 2px solid #77777c;
+  outline-offset: 3px;
+}
+.surface-dialog button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+@keyframes surface-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.975);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-width: 600px) {
+  .surface-scroll {
+    padding: 32px 24px;
+  }
+  .surface-dialog h2 {
+    font-size: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .surface-dialog {
+    animation: none;
+  }
+}
+
+.enquiry-form {
+  display: grid;
+  gap: 20px;
+}
+.enquiry-field {
+  display: grid;
+  gap: 8px;
+}
+.enquiry-field label {
+  font-size: 12px;
+  color: #77777c;
+  transition: color 0.18s;
+}
+.enquiry-field:focus-within label {
+  color: #151517;
+}
+.surface-dialog .enquiry-field input,
+.surface-dialog .enquiry-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #f7f7f7;
+  padding: 14px 19px;
+  color: #151517;
+  font: inherit;
+  font-size: 14px;
+  line-height: 22px;
+  box-shadow: none;
+  transition: background 0.18s;
+}
+.surface-dialog .enquiry-field textarea {
+  border-radius: 22px;
+  min-height: 145px;
+  resize: vertical;
+  max-height: 260px;
+}
+.surface-dialog .enquiry-field :is(input, textarea):focus {
+  background: #e9e9eb;
+  box-shadow: 0 0 0 1px #77777c;
+  outline: 1px solid #77777c;
+  outline-offset: 2px;
+}
+.enquiry-field ::placeholder {
+  color: #77777c;
+}
+.enquiry-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+.enquiry-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 25px;
+  min-height: 46px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.18s;
+}
+.enquiry-actions .enquiry-send {
+  background: #151517;
+  color: #fff;
+}
+.enquiry-send:hover {
+  background: #080809;
+}
+.enquiry-send svg {
+  transition: transform 0.2s;
+}
+.enquiry-send:hover svg {
+  transform: translateX(4px);
+}
+.enquiry-actions .enquiry-cancel {
+  background: #f7f7f7;
+  color: #77777c;
+}
+.enquiry-cancel:hover {
+  background: #e9e9eb;
+  color: #151517;
+}
+.enquiry-error {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #151517;
+}
+.enquiry-toast-position {
+  position: fixed;
+  z-index: 200;
+  top: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0 20px;
+}
+.enquiry-toast {
+  background: #fff;
+  color: #151517;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px #15151716;
+  padding: 17px 25px;
+  font:
+    13px -apple-system,
+    BlinkMacSystemFont,
+    Inter,
+    sans-serif;
+  animation: toast-enter 0.25s ease;
+}
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .enquiry-toast {
+    animation: none;
+  }
+  .enquiry-send svg {
+    transition: none;
+  }
+}
+
+.surface-dialog .enquiry-field label {
+  margin: 0;
+  line-height: 1.4;
+}
+.surface-dialog .enquiry-field :is(input, textarea) {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* The relevant production global declarations are scoped to this dialog.
+   kailor's final !important form rule wins over SurfaceDialog's :focus-visible. */
+.surface-dialog { line-height: 1.5; }
+.surface-dialog input:focus,
+.surface-dialog input:focus-visible,
+.surface-dialog textarea:focus,
+.surface-dialog textarea:focus-visible { outline: none !important; }
+.surface-dialog svg { display: block; vertical-align: middle; }
+.surface-dialog a { color: inherit; text-decoration: none; }
+@media (prefers-reduced-motion: reduce) {
+ .surface-dialog, .surface-dialog *, .surface-dialog *::before, .surface-dialog *::after { animation: none !important; transition: none !important; }
+}
+
+/* Production global button geometry overrides SurfaceDialog's close reset. */
+:root .surface-dialog button:not([class*="public"]):not(.pub-icon) { border-radius: 999px; }
+.surface-dialog :where(div,h2,label,svg) { border-width: 0; border-style: solid; }

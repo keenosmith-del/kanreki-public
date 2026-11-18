@@ -9,14 +9,14 @@ for(const width of widths) {
     await expect(page.getByRole('link',{name:'kanreki.'})).toBeVisible();
     await expect(page.locator('link[rel=icon]')).toHaveAttribute('href','/url-icon.png');
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-    await page.screenshot({path:`docs/verification/home-${width}.png`,fullPage:true});
+    await page.screenshot({path:`test-results/layout/home-${width}.png`,fullPage:true});
     if(width<=760){await page.getByRole('button',{name:'open menu'}).click();await expect(page.getByRole('navigation',{name:'mobile navigation'})).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'open menu'})).toBeFocused();}
     for(const route of ['/sign-in','/create-account']) {
       await page.goto(route);await expect(page.getByRole('heading',{level:1})).toBeVisible();
       for(const field of await page.locator('input').all())await expect(field).toBeDisabled();
       await expect(page.getByRole('button',{name:/restricted/})).toBeDisabled();
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-      await page.screenshot({path:`docs/verification/${route.slice(1)}-${width}.png`,fullPage:true});
+      await page.screenshot({path:`test-results/layout/${route.slice(1)}-${width}.png`,fullPage:true});
     }
     expect(errors).toEqual([]);
   });
@@ -24,9 +24,7 @@ for(const width of widths) {
 test('direct routes, refresh, links, status codes and metadata',async({page,request})=>{
   for(const route of ['/','/about','/contact','/sign-in','/create-account','/privacy','/terms','/cookies']) {
     const response=await page.goto(route);expect(response?.status()).toBe(200);await page.reload();await expect(page.locator('main h1')).toBeVisible();
-    const origin = process.env.SITE_URL || process.env.CF_PAGES_URL;
-    if (origin) await expect(page.locator('link[rel=canonical]')).toHaveAttribute('href',`${new URL(origin).origin}${route}`);
-    else await expect(page.locator('link[rel=canonical]')).toHaveCount(0);
+    await expect(page.locator('link[rel=canonical]')).toHaveCount(0);
     await expect(page.locator('meta[name=robots]')).toHaveAttribute('content','noindex, follow');
   }
   for(const route of ['/missing','/api/users','/src/main.tsx','/.env']){const response=await request.get(route);expect(response.status()).toBe(404);expect(await response.text()).toContain('This page isn’t here');}
@@ -38,7 +36,7 @@ test('direct routes, refresh, links, status codes and metadata',async({page,requ
 test('short desktop and reduced motion',async({page})=>{
   await page.setViewportSize({width:1280,height:650});await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/create-account');
   await expect(page.getByRole('button',{name:/restricted/})).toBeInViewport();await expect(page.getByRole('navigation',{name:'legal'})).toBeInViewport();
-  await page.screenshot({path:'docs/verification/create-account-short-desktop.png',fullPage:true});
+  await page.screenshot({path:'test-results/layout/create-account-short-desktop.png',fullPage:true});
   await page.goto('/');await expect(page.locator('video')).toHaveCount(0);await expect(page.getByRole('heading',{level:1})).toBeVisible();
 });
 

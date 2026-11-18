@@ -1,0 +1,27 @@
+{
+  "reviewedOn": "2026-11-18",
+  "method": "Moving original/optimized comparisons, representative browser screenshots, full per-frame SSIM and complete native delivery playback/loop tests",
+  "drafting": {
+    "normalRateOriginalLoopsObserved": 2,
+    "normalRateOptimizedLoopsObserved": 2,
+    "nativeDeliveryLoopTestPassed": true
+  },
+  "search": {
+    "normalRateOriginalLoopsObserved": 1,
+    "normalRateOptimizedLoopsObserved": 1,
+    "nativeDeliveryLoopTestPassed": true
+  },
+  "profiles": {
+    "normalRateOptimizedLoopsObserved": 4,
+    "nativeDeliveryLoopTestPassed": true,
+    "sourceAndDeliveryFrameTimestampsIdentical": true
+  },
+  "nativeDeliveryTests": {
+    "browser": "Chromium",
+    "playbackRate": 4,
+    "allThreeCompleteSequencesLooped": true,
+    "decoderErrors": 0,
+    "resolution": "1920x1080"
+  },
+  "notes": "The local two-player review control needed explicit load/play separation. Full browser delivery playback is independently verified; approved movie content is unchanged."
+}

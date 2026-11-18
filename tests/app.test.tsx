@@ -28,7 +28,7 @@ describe('public routes and navigation',()=>{
     expect(readingFilm.muted&&readingFilm.loop&&readingFilm.playsInline).toBe(true);
     const saved=container.querySelector('#search-saved')! as HTMLElement;
     expect(within(saved).getByRole('heading',{name:'search and saved content'})).toBeTruthy();
-    expect(within(saved).getByText('Search articles, photographs and people, filter results by content type, and save posts to return to later.')).toBeTruthy();
+    expect(within(saved).getByText('Search articles, images and people, filter results by content type, and save posts to return to later.')).toBeTruthy();
     expect(saved.classList.contains('cinema-editorial--media-left')).toBe(true);
     const savedFilm=saved.querySelector('video')! as HTMLVideoElement;
     expect(savedFilm.querySelector('source')?.getAttribute('src')).toBe('/media/kanreki-search.mp4');
@@ -40,14 +40,14 @@ describe('public routes and navigation',()=>{
     mount();const toggle=screen.getByRole('button',{name:'open menu'});fireEvent.click(toggle);expect(toggle.getAttribute('aria-expanded')).toBe('true');fireEvent.keyDown(document,{key:'Escape'});expect(document.activeElement).toBe(toggle);expect(screen.queryByRole('navigation',{name:'mobile navigation'})).toBeNull();
     fireEvent.click(toggle);fireEvent.click(within(screen.getByRole('navigation',{name:'mobile navigation'})).getByText('about'));expect(screen.getByRole('heading',{level:1}).textContent).toContain('A place for');expect(screen.queryByRole('navigation',{name:'mobile navigation'})).toBeNull();
   });
-  it('opens real mail without a faux contact form',()=>{const {container}=mount('/contact');expect(screen.getByRole('link',{name:'keenosmith@kailor.co.za'}).getAttribute('href')).toMatch(/^mailto:/);expect(container.querySelector('form')).toBeNull();});
+  it('opens the same enquiry dialog from the contact route',()=>{const {container}=mount('/contact');fireEvent.click(screen.getByRole('link',{name:'open enquiry form'}));expect(screen.getByRole('dialog',{name:'your enquiry'})).toBeTruthy();expect(container.innerHTML).not.toContain('mailto:');});
 });
 describe('kanreki identity',()=>{
-  it('keeps all pages unindexed and identifies kanreki as the publisher',()=>{
-    expect(Object.values(pages).every(page=>!page.index)).toBe(true);
+  it('defines the production indexing policy and identifies kanreki as publisher',()=>{
+    expect(Object.entries(pages).filter(([,page])=>page.index).map(([path])=>path)).toEqual(['/','/about','/contact']);
     expect(canonical('/')).toBe(origin ? `${origin}/` : '');
     expect(canonical('/unknown')).toBe('');
-    expect(structuredData['@graph'][0]).toMatchObject({publisher:{'@id':`${origin}/#organization`}});
+    expect(structuredData['@graph'][0]).toMatchObject({publisher:{'@id':`${origin ? origin+'/' : ''}#organization`}});
     expect(structuredData['@graph'][1]).toMatchObject({name:'kanreki',foundingDate:'2020'});
   });
   it('uses the shared wordmark and establishment year',()=>{

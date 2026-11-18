@@ -12,6 +12,9 @@ function useMediaQuery(query:string) {
 export function MediaSlot({ spec, children, className = '', onFirstCycle, onFallback, requireFullPlayback = false }: {
   spec:MediaSpec; children?:ReactNode; className?:string; onFirstCycle?:()=>void; onFallback?:()=>void; requireFullPlayback?:boolean;
 }) {
+  const slot=useRef<HTMLDivElement>(null);
+  const [eligible,setEligible]=useState(spec.id==='introduction'||typeof IntersectionObserver==='undefined');
+  useEffect(()=>{if(eligible||!slot.current)return;const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){setEligible(true);observer.disconnect()}},{rootMargin:'250px'});observer.observe(slot.current);return()=>observer.disconnect()},[eligible]);
   const reduced=useMediaQuery('(prefers-reduced-motion: reduce)');
   const narrow=useMediaQuery('(max-width: 760px)');
   const mobile=Boolean(spec.mobilePoster)&&narrow===true;
@@ -24,10 +27,10 @@ export function MediaSlot({ spec, children, className = '', onFirstCycle, onFall
   useEffect(()=>{if(staticOnly)callbacks.current.onFallback?.();},[staticOnly]);
   useEffect(()=>{if(reduced===true||mobile)video.current?.pause();},[reduced,mobile]);
   useEffect(()=>{
-    if(staticOnly||reduced===null||narrow===null)return;
+    if(!eligible||staticOnly||reduced===null||narrow===null)return;
     const timer=window.setTimeout(()=>{if(!video.current||video.current.paused){setFailed(true);setPlaying(false);}},12000);
     return()=>window.clearTimeout(timer);
-  },[staticOnly,reduced,narrow]);
+  },[eligible,staticOnly,reduced,narrow]);
   function fullyPlayed() {
     const el=video.current;if(!el)return false;
     for(let i=0;i<el.played.length;i++)if(el.played.start(i)<.25&&el.played.end(i)>=el.duration-.1)return true;
@@ -55,11 +58,11 @@ export function MediaSlot({ spec, children, className = '', onFirstCycle, onFall
     void el.play().then(()=>setPlaying(true)).catch(()=>{setFailed(true);setPlaying(false);});
   }
   const showPoster=spec.kind==='video'&&poster&&!posterFailed&&(!playing||staticOnly);
-  return <div className={`media-slot ${className}`} style={{aspectRatio:spec.ratio}} data-media-slot={spec.id}>
+  return <div ref={slot} className={`media-slot ${className}`} style={{aspectRatio:spec.ratio}} data-media-slot={spec.id}>
     <div className="media-fallback" hidden={Boolean((playing&&!staticOnly)||showPoster)}>{children??<span className="media-caption">{spec.label}</span>}</div>
     {spec.kind==='image'&&spec.src&&!failed&&<img src={spec.src} alt={spec.alt} loading="lazy" onError={()=>setFailed(true)}/>}
-    {showPoster&&<img src={poster} alt={spec.alt} onError={()=>setPosterFailed(true)}/>}
-    {spec.kind==='video'&&spec.src&&!staticOnly&&reduced===false&&narrow!==null&&<video ref={video} poster={poster} style={{visibility:playing?'visible':'hidden'}} autoPlay muted playsInline loop={spec.loop??false} preload={spec.id==='introduction'?'auto':'metadata'} aria-label={spec.alt}
+    {showPoster&&<img src={poster} alt={spec.alt} loading={spec.id==='introduction'?'eager':'lazy'} decoding="async" onError={()=>setPosterFailed(true)}/>}
+    {spec.kind==='video'&&spec.src&&eligible&&!staticOnly&&reduced===false&&narrow!==null&&<video ref={video} poster={poster} style={{visibility:playing?'visible':'hidden'}} autoPlay muted playsInline loop={spec.loop??false} preload={spec.id==='introduction'?'auto':'metadata'} aria-label={spec.alt}
       onLoadedData={start} onTimeUpdate={samplePlayback} onSeeked={seekFinished} onPlaying={()=>setPlaying(true)} onEnded={()=>{setPlaying(true);finish();}} onError={()=>{setFailed(true);setPlaying(false);}}>
       <source src={spec.src} type="video/mp4"/>{spec.webm&&<source src={spec.webm} type="video/webm"/>}
     </video>}

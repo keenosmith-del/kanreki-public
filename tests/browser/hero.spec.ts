@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import hero from '../../src/hero-production.json';
+import hero from '../../src/hero-production.json' with {type:'json'};
 
 test('wordmark circular period and fallback account routes',async({page})=>{
   await page.goto('/');

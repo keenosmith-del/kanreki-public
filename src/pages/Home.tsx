@@ -5,10 +5,10 @@ import { MediaSlot } from '../components/MediaSlot';
 import { media } from '../media';
 
 const features = [
-  { spec: media.feed, title: 'profiles and feed interactions', description: 'View user profiles, browse published photographs and articles, and navigate between personal posts and the main feed. Interact with content through likes, comments, reposts and saved posts.' },
+  { spec: media.feed, title: 'profiles and feed interactions', description: 'View user profiles, browse published images and articles, and navigate between personal posts and the main feed. Interact with content through likes, comments, reposts and saved posts.' },
   { spec: media.social, title: 'ai-assisted drafting and editing', description: 'Describe what you want to write and generate a draft. Revise selected passages with AI suggestions, format your content, add images and review the finished article before publishing.', cta: 'try it out' },
   { spec: media.profile, title: 'reading articles and discussions', description: 'Open articles from the feed to read the full content, view responses from other readers, like comments, reshare posts and contribute to the discussion.' },
-  { spec: media.writing, title: 'search and saved content', description: 'Search articles, photographs and people, filter results by content type, and save posts to return to later.' },
+  { spec: media.writing, title: 'search and saved content', description: 'Search articles, images and people, filter results by content type, and save posts to return to later.' },
 ];
 export function Home() {
   const {hash}=useLocation();

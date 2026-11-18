@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
+import {linkedin} from '../social';
+import {ContactLink} from './contact/ContactProvider';
 import {CookieIcon} from './CookieIcon';
 import { Brand } from './Brand';
 
 export const mainLinks = [
   { to: '/', label: 'home' }, { to: '/about', label: 'about' },
   { to: '/contact', label: 'contact' },
-  { to: 'https://www.linkedin.com/company/kailor/', label: 'linkedin' },
+  ...(linkedin.verified&&linkedin.url?[{to:linkedin.url,label:'linkedin'}]:[]),
 ] as const;
 export function SiteLink({ to, children, className = '' }: { to: string; children: React.ReactNode; className?: string }) {
+  if(to==='/contact')return <ContactLink className={className}>{children}</ContactLink>;
   return to.startsWith('https:') ? <a className={className} href={to} target="_blank" rel="noopener noreferrer">{children}</a>
     : <NavLink end className={className} to={to}>{children}</NavLink>;
 }

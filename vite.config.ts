@@ -1,19 +1,12 @@
 import { defineConfig } from 'vite';
 
-const configuredUrl = process.env.SITE_URL || process.env.CF_PAGES_URL;
-let origin = '';
-if (configuredUrl) {
-  const url = new URL(configuredUrl);
-  if (url.protocol !== 'https:' || url.username || url.password || url.pathname !== '/' || url.search || url.hash) {
-    throw new Error('SITE_URL / CF_PAGES_URL must be an HTTPS origin without a path, credentials, query or fragment.');
-  }
-  origin = url.origin;
-}
+import {siteConfig} from './config/site.mjs';
+const site=siteConfig();
 export default defineConfig({
   // Film authoring has its own dependencies; the public app uses one React runtime.
   resolve: { dedupe: ['react', 'react-dom'] },
   optimizeDeps: { entries: ['index.html'] },
-  define: { 'import.meta.env.VITE_SITE_ORIGIN': JSON.stringify(origin) },
+  define: { 'import.meta.env.VITE_SITE_ORIGIN': JSON.stringify(site.origin), 'import.meta.env.VITE_IS_PRODUCTION': JSON.stringify(String(site.production)) },
   oxc: { jsx: { runtime: 'automatic' } },
-  build: { sourcemap: false },
+  build: { sourcemap: false, outDir: process.env.BROWSER_TEST_BUILD==='true'?'dist-browser-test':'dist' },
 });

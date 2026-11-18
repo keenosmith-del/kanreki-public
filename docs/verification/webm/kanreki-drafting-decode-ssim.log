@@ -1,0 +1,52 @@
+Input #0, matroska,webm, from '/Users/keenosmith/Programming/kanreki-public/media-originals/webm-2026-11-18/kanreki-drafting.webm':
+  Metadata:
+    COMMENT         : Made with Remotion 4.0.541
+    MAJOR_BRAND     : isom
+    MINOR_VERSION   : 512
+    COMPATIBLE_BRANDS: isomiso2avc1mp41
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:46.00, start: 0.000000, bitrate: 5606 kb/s
+  Stream #0:0: Video: vp9 (Profile 0), yuv420p(pc, bt470bg/unknown/unknown, progressive), 1920x1080, SAR 1:1 DAR 16:9, 60 fps, 60 tbr, 1k tbn (default)
+    Metadata:
+      ENCODER         : Lavc63.1.102 libvpx-vp9
+      HANDLER_NAME    : VideoHandler
+      DURATION        : 00:00:46.000000000
+Input #1, matroska,webm, from '/Users/keenosmith/Programming/kanreki-public/film/output/delivery-optimized/final/kanreki-drafting.webm':
+  Metadata:
+    COMPATIBLE_BRANDS: isomiso2avc1mp41
+    COMMENT         : Made with Remotion 4.0.541
+    MAJOR_BRAND     : isom
+    MINOR_VERSION   : 512
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:46.00, start: 0.000000, bitrate: 3740 kb/s
+  Stream #1:0: Video: vp9 (Profile 0), yuv420p(pc, bt470bg/unknown/unknown, progressive), 1920x1080, SAR 1:1 DAR 16:9, 60 fps, 60 tbr, 1k tbn (default)
+    Metadata:
+      ENCODER         : Lavc63.1.102 libvpx-vp9
+      HANDLER_NAME    : VideoHandler
+      DURATION        : 00:00:46.000000000
+Stream mapping:
+  Stream #0:0 (vp9) -> blackdetect:default
+  Stream #1:0 (vp9) -> blackdetect:default
+  ssim:default -> Stream #0:0 (wrapped_avframe)
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    COMMENT         : Made with Remotion 4.0.541
+    MAJOR_BRAND     : isom
+    MINOR_VERSION   : 512
+    COMPATIBLE_BRANDS: isomiso2avc1mp41
+    encoder         : Lavf63.1.102
+  Stream #0:0: Video: wrapped_avframe, yuv420p(pc, bt470bg/unknown/unknown, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 60 fps, 60 tbn
+    Metadata:
+      encoder         : Lavc63.1.102 wrapped_avframe
+frame=  377 fps=0.0 q=-0.0 size=N/A time=00:00:06.28 bitrate=N/A speed=12.4x elapsed=0:00:00.50
+frame=  739 fps=732 q=-0.0 size=N/A time=00:00:12.31 bitrate=N/A speed=12.2x elapsed=0:00:01.00
+frame= 1034 fps=685 q=-0.0 size=N/A time=00:00:17.23 bitrate=N/A speed=11.4x elapsed=0:00:01.50
+frame= 1316 fps=653 q=-0.0 size=N/A time=00:00:21.93 bitrate=N/A speed=10.9x elapsed=0:00:02.01
+frame= 1608 fps=638 q=-0.0 size=N/A time=00:00:26.80 bitrate=N/A speed=10.6x elapsed=0:00:02.51
+frame= 1914 fps=633 q=-0.0 size=N/A time=00:00:31.90 bitrate=N/A speed=10.5x elapsed=0:00:03.02
+frame= 2221 fps=630 q=-0.0 size=N/A time=00:00:37.01 bitrate=N/A speed=10.5x elapsed=0:00:03.52
+frame= 2518 fps=625 q=-0.0 size=N/A time=00:00:41.96 bitrate=N/A speed=10.4x elapsed=0:00:04.03
+[Parsed_ssim_2 @ 0x798b005800] SSIM Y:0.996582 (24.662914) U:0.999583 (33.800958) V:0.999836 (37.857507) All:0.997625 (26.243194)
+[out#0/null @ 0x798b004840] video:1143KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 2760 fps=629 q=-0.0 Lsize=N/A time=00:00:46.00 bitrate=N/A speed=10.5x elapsed=0:00:04.38

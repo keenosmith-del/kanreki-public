@@ -1,8 +1,10 @@
-# kanreki — public website
+# kanreki | public website
 
-Independent React + TypeScript + Vite static frontend for kanreki, established in 2020. No database, API, live authentication, analytics or embedded third-party services. The publication application is separate and public access remains restricted.
+Independent React, TypeScript and Vite public website for [keenosmith-del/kanreki-public](https://github.com/keenosmith-del/kanreki-public). kanreki is an independent publishing and social platform established in 2020. The publishing application is separate; public sign-in and registration stay disabled.
 
-Use Node 24 (minimum 22.12). From this repository:
+Six approved cinematic films are integrated. This iteration preserves their source and MP4 exports; only three authorized WebM delivery encodes change. Lower-page films load near the viewport; mobile and reduced-motion users receive the existing static posters. The hero retains its first-completed-playback account actions.
+
+Use Node 24 (`.node-version`).
 
 ```sh
 npm ci
@@ -15,28 +17,22 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-Production output: `dist/`. For a production-like local preview with correct static 404 status and CSP:
+For the prerendered local website, including security headers, media byte ranges and genuine HTTP 404 responses:
 
 ```sh
 node scripts/serve.mjs
 ```
 
-Open `http://127.0.0.1:4173`. Vite's development server is for development; the production-like server and browser tests exercise prerendered output. `npm run preview` provides the usual Vite preview but does not model Cloudflare 404 status handling.
+Open [local preview](http://127.0.0.1:4173). The Vite development server is intended for editing; it does not model static-host 404 handling. Browser tests create a separate ignored `dist-browser-test/` preview and intercept all EmailJS requests with test responses. They never send a live enquiry or change the normal build's configuration.
 
-## Structure
+Contact actions open one accessible native enquiry dialog matched against kailor's live production modal. `/contact` remains a standalone route. The owner-approved **shared kailor EmailJS service, template and recipient** are used unchanged. The same three `VITE_EMAILJS_*` browser-public identifiers belong in ignored `.env.local` or this Pages project's private environment settings; see `.env.example`. No recipient address or private provider credential belongs in the client. The subject is `kanreki website enquiry`. The existing template additionally needs `name`/`email` aliases; both aliases and kailor's original five parameter names are sent. One live request was confirmed OK in provider history and received by the owner. Provider account settings and kailor code were not changed.
 
-- `src/components/`: shared wordmark, accessible header/footer and future media lifecycle.
-- `src/pages/`: six-section homepage, restricted account screens, About/contact and review-pending legal pages.
-- `src/styles/`: public navigation and auth geometry adapted from current kailor; publication layouts and tokens.
-- `src/media.ts`: six asset-free slots; no nonexistent asset requests.
-- `src/seo.ts`: canonical metadata and real publisher relationship.
-- `scripts/build.ts`: Vite build, route prerendering, CSP hash and sitemap generation.
-- `public/`: exact supplied `url-icon.png`, licensed Inter font, robots and security/cache headers.
-- `tests/`: route/navigation/restriction/media tests and responsive production browser checks.
-- `docs/`: source comparison, feature evidence, deferred media and deployment runbook.
+The contact focus cascade, dimensions and buttons are checked against captured production computed styles at 1440, 768, 390 and 320 px. Visual regression tests cover initial, focused, validation and mocked sending states. Reference CSS fixtures make these tests independent of a neighbouring kailor checkout.
 
-Direct requests receive meaningful HTML without JavaScript. The build emits `/`, `/about`, `/contact`, `/sign-in`, `/create-account`, `/privacy`, `/terms`, `/cookies` and `404.html`. Cloudflare Pages uses the top-level `404.html` for unknown URLs; do not add a catch-all SPA rewrite. There is no `/api` service.
+Three WebM delivery files were optimized below 24 MiB without changing content, resolution, fps, frame count or timestamps. The approved originals remain under `media-originals/webm-2026-11-18/`; all MP4s, posters and Remotion source remain unchanged. Reproduce with `python3 scripts/optimize-webm.py` and validate using `python3 scripts/validate-webm.py`. `npm run check:build` and `npm run check:release` reject **any** output file above Pages' 25 MiB limit.
 
-All routes are `noindex, follow` in HTML and response headers. The sitemap intentionally contains no URLs. Set build-time `SITE_URL` to the actual deployed HTTPS origin, or let Cloudflare’s `CF_PAGES_URL` supply the deployment hostname. Without either value, canonical and Open Graph URL tags are omitted. The planned `https://kanreki.co.za` and `https://app.kanreki.co.za` domains are not connected or linked as live services. Indexing requires a separate reviewed source change.
+Preview builds default to `noindex`. Production indexing requires `DEPLOYMENT_ENV=production`, a real verified HTTPS `SITE_URL`, and `SITE_ORIGIN_VERIFIED=true`. Only home, About and Contact enter the production sitemap. Restricted account pages and legal drafts remain `noindex, follow`; unknown routes return HTTP 404 and `noindex`. Per-commit Pages URLs are never used as canonical origins. No unpurchased domain is configured.
 
-See [deployment](docs/deployment.md), [reference audit](docs/reference-audit.md), [media manifest](docs/media.md) and [verification](docs/verification.md). No hosting resources, DNS, existing kailor website or kanreki application are changed by this implementation.
+Key files: `src/seo.ts` and `config/site.mjs` control metadata; `src/social.ts` holds the owner-confirmed LinkedIn URL; `src/components/contact/` and `src/services/enquiries.ts` implement enquiries; `scripts/build.ts` prerenders all eight routes and custom 404. The official-identity 1200 × 630 social preview is `public/social-preview.png`; regenerate with `node scripts/render-social-preview.mjs` using Helvetica Neue installed locally.
+
+See [deployment and provider setup](docs/deployment.md) and [predeployment verification](docs/predeployment.md). No repository push, hosting deployment, DNS change, kailor configuration change or publishing-platform modification is part of this iteration.
