@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-18T20:55:08.119Z",
-  "sourceFingerprint": "8684ec6608e7223e744a70643074fea564932ef6fd3c047f8bf178e8704e3ead",
+  "checkedAt": "2026-11-18T21:00:58.079Z",
+  "sourceFingerprint": "dc011dc41581bff835ceed60c13f8382e20456df81e800539521f4263cbb5a02",
   "commands": [
     {
       "command": "npm ci",
@@ -18,7 +18,7 @@
       "command": "npm test",
       "exitCode": 0,
       "summary": [
-        "Tests  118 passed (118)"
+        "Tests  121 passed (121)"
       ]
     },
     {
@@ -30,7 +30,7 @@
       "command": "npm run check:build",
       "exitCode": 0,
       "summary": [
-        "Build checks passed: preview, 8 routes + 404, 0 sitemap URLs, titles, social image, LinkedIn, CSP, privacy and approved-film hashes."
+        "Build checks passed: production, 8 routes + 404, 3 sitemap URLs, titles, social image, LinkedIn, CSP, privacy and approved-film hashes."
       ]
     },
     {

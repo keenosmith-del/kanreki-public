@@ -20,6 +20,7 @@
   ],
   "providerDocumentedSendLimit": "1 request per second (EmailJS REST send documentation)",
   "residualRisk": "Public identifiers can trigger the existing fixed template outside this website, consume the shared quota and cause spam. Client controls and this website CSP do not enforce provider origin restrictions.",
-  "ownerDecision": "pending",
-  "sharedSettingsChanged": false
+  "ownerDecision": "Accepted in this chat on 18 November 2026; preserve shared configuration without allowlisting.",
+  "sharedSettingsChanged": false,
+  "approvedAt": "2026-11-18T21:00:39.349253+00:00"
 }

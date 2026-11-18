@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-18T20:34:07.162106+00:00",
+  "checkedAt": "2026-11-18T21:02:18.712212+00:00",
   "account": {
     "pagesProjectListingSucceeded": true,
     "verifiedAgainstKailor": true,
@@ -16,7 +16,8 @@
     "rootDirectory": "/",
     "nodeVersion": "24",
     "emailjsIdentifiersPresent": true,
-    "buildMode": "preview"
+    "buildMode": "production",
+    "previewMode": "preview"
   },
   "initialDeployment": {
     "id": "253a2855-41e0-4401-86c4-0dc21a1efb8b",

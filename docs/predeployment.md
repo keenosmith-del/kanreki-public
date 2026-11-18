@@ -1,3 +1,15 @@
+# Authorized production launch | 18 November 2026
+
+The owner confirmed personal-capacity operation by Keeno Smith, no separately registered entity or dedicated business/postal address, and a newly adopted manual enquiry retention policy: 12 months after the last relevant correspondence, quarterly review and deletion from the shared mailbox when no longer required, subject to legal obligations. The owner explicitly accepted the residual abuse/quota risk of shared EmailJS identifiers without domain allowlisting and instructed publication and production indexing. The legal pages now carry an effective date of 18 November 2026 and no draft banner. No automated deletion, company registration, corporate address or independent legal review is claimed.
+
+POPIA section 18(1)(b) calls for the responsible party’s name and address. The absence of a dedicated public service address remains documented; no residential address was published. Following the owner’s explicit direction, this is a disclosure limitation rather than an additional technical deployment gate. It is not represented as complete legal compliance. The contact form remains the privacy-request route.
+
+The production environment has been configured for the verified origin, preserving the shared EmailJS identifiers and preview-branch noindex settings. A fresh GitHub build will activate index/follow only for home, About and Contact. Legal and restricted account routes remain noindex. Google URL-prefix ownership is already verified; sitemap submission and indexing requests follow live indexability verification. Actual deployment/test/Search Console outcomes are recorded under docs/verification/launch/.
+
+All six films, homepage layouts, contact modal, account restrictions and kailor resources remain unchanged. Earlier stages below are historical records, not current approval status.
+
+---
+
 # Search Console and legal-publication review | 18 November 2026
 
 Google verified the URL-prefix property **https://kanreki-public.pages.dev/** using its issued HTML file, now preserved under public/. Cloudflare redirects the .html path to the same-origin extensionless resource; its exact content returns HTTP 200 and Google accepted the verification. The property overview is processing data. **No sitemap was submitted and no indexing was requested**, because the actual site remains noindex while material owner decisions are pending.

@@ -1,12 +1,20 @@
 {
   "legal": {
-    "status": "pending",
+    "status": "approved",
+    "actor": "owner",
     "origin": "https://kanreki-public.pages.dev",
-    "reason": "Technical deployment authorization does not constitute legal approval."
+    "approvedAt": "2026-11-18T21:00:39.349253+00:00",
+    "evidence": "Owner confirmed personal-capacity operation, no public business/postal address, adopted a 12-month manual retention policy with quarterly review, and explicitly instructed finalization, publication and production indexing in this chat on 18 November 2026.",
+    "independentLegalReviewClaimed": false,
+    "disclosureLimitation": "POPIA section 18(1)(b) calls for responsible-party name and address. Owner has no dedicated public address and expressly prohibits residential disclosure. Contact form supplied; no complete legal-compliance certification or invented address."
   },
   "providerSecurity": {
-    "status": "pending",
+    "status": "approved",
+    "actor": "owner",
     "origin": "https://kanreki-public.pages.dev",
-    "reason": "No subscription change or security exception has been approved."
+    "approvedAt": "2026-11-18T21:00:39.349253+00:00",
+    "evidence": "Owner explicitly accepted proceeding without domain allowlisting, acknowledging the additional abuse and shared-quota risk, in this chat on 18 November 2026.",
+    "restrictionsRemainUnavailable": true,
+    "sharedSettingsChanged": false
   }
 }

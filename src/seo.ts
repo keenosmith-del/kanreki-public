@@ -10,9 +10,9 @@ export const pages = {
   '/contact': { title: 'contact | kanreki', description: 'Contact the kanreki team about the publication and future access.', index: true },
   '/sign-in': { title: 'sign in | kanreki', description: 'Public sign-in to kanreki is currently restricted.', index: false },
   '/create-account': { title: 'create account | kanreki', description: 'Public registration for kanreki is currently restricted.', index: false },
-  '/privacy': { title: 'privacy | kanreki', description: 'Draft privacy information for the kanreki public website, pending review.', index: false },
-  '/terms': { title: 'terms | kanreki', description: 'Draft terms for the kanreki public website, pending review.', index: false },
-  '/cookies': { title: 'cookies | kanreki', description: 'Current cookie and storage behaviour of the kanreki public website. Draft pending review.', index: false },
+  '/privacy': { title: 'privacy | kanreki', description: 'Privacy information for the kanreki public website and enquiry form.', index: false },
+  '/terms': { title: 'terms | kanreki', description: 'Terms of use for the kanreki public website.', index: false },
+  '/cookies': { title: 'cookies | kanreki', description: 'Cookie and storage disclosures for the kanreki public website.', index: false },
 } as const;
 export function pageMetadata(path: string) {
   const normalised = path.replace(/\/$/, '') || '/';

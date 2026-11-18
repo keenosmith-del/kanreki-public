@@ -2,11 +2,11 @@
 
 Scope: the public marketing website only; no account backend, subscription, publishing agreement or operational application terms. Owner authorization permits publication once factual gaps are resolved. No independent lawyer review is claimed.
 
-## Facts requiring owner confirmation
+## Owner-confirmed publication facts
 
-- Responsible operator/legal name and public service/postal address. The brand and shared ownership description do not establish a legal entity or address.
-- Actual enquiry mailbox retention/deletion practice and any retention duties. No automatic deletion schedule is implemented in the public frontend.
-- Separate acceptance of shared EmailJS residual abuse/quota risk without a provider origin allowlist.
+The owner confirmed in this chat that Keeno Smith operates the brand personally, without a separate registered entity or business/postal address; residential disclosure is prohibited. The owner adopted a **new** manual policy of 12 months after last relevant correspondence, quarterly review and mailbox deletion when no longer required, subject to legal obligations. No historical or automated deletion practice is claimed. The owner expressly accepted the shared EmailJS configuration without allowlisting and directed publication and indexing.
+
+POPIA section 18(1)(b) calls for name and address of the responsible party. No dedicated public service address exists. The owner requested that this limitation be identified without blocking technical deployment; the notice gives the confirmed operator name and contact form. This is a documented disclosure limitation, not certification that the statutory address disclosure has been fulfilled. No independent lawyer approval is claimed. The separate provider-risk and legal publication decisions are recorded in release-approvals.json.
 
 ## Verified implementation
 
@@ -32,7 +32,7 @@ We aim to keep information accurate, but features and availability may change. T
 
 Use the enquiry form for website questions and privacy requests. Provide accurate contact details and avoid confidential credentials or sensitive information. Delivery depends on EmailJS and the connected provider; an on-screen confirmation records provider acceptance, not a promise of response time.
 
-Future publishing application accounts, content rights, moderation and services will require separate terms. These public website terms do not replace those terms. South African law and jurisdiction wording awaits confirmation of the actual operator's location.
+Future publishing application accounts, content rights, moderation and services will require separate terms. These public website terms do not replace those terms. The finalized public terms apply South African law subject to mandatory rights.
 
 ## Source references checked
 
@@ -44,4 +44,4 @@ Future publishing application accounts, content rights, moderation and services 
 - Conditional security cookies: https://developers.cloudflare.com/fundamentals/reference/policies-compliances/cloudflare-cookies/
 - Zoho privacy: https://www.zoho.com/privacy.html
 
-This record preserves unresolved facts explicitly; it is not an approval or compliance certification.
+This record preserves the source of the owner’s publication decision and remaining address-disclosure limitation; it is not an independent legal review or compliance certification.

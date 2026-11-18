@@ -5,39 +5,39 @@
   "files": [
     {
       "path": "_headers",
-      "bytes": 1886
+      "bytes": 1840
     },
     {
       "path": "404.html",
-      "bytes": 4643
+      "bytes": 4707
     },
     {
       "path": "about/index.html",
-      "bytes": 5821
-    },
-    {
-      "path": "assets/index-BKwOl24y.js",
-      "bytes": 269206
+      "bytes": 6026
     },
     {
       "path": "assets/index-CJPRXCl1.css",
       "bytes": 25461
     },
     {
+      "path": "assets/index-CPWtX1iQ.js",
+      "bytes": 270819
+    },
+    {
       "path": "build-info.json",
-      "bytes": 270
+      "bytes": 345
     },
     {
       "path": "contact/index.html",
-      "bytes": 5275
+      "bytes": 5484
     },
     {
       "path": "cookies/index.html",
-      "bytes": 7031
+      "bytes": 7380
     },
     {
       "path": "create-account/index.html",
-      "bytes": 4589
+      "bytes": 4814
     },
     {
       "path": "fonts/inter.woff2",
@@ -53,7 +53,7 @@
     },
     {
       "path": "index.html",
-      "bytes": 10483
+      "bytes": 10861
     },
     {
       "path": "media/kanreki-community-mobile.png",
@@ -149,19 +149,19 @@
     },
     {
       "path": "privacy/index.html",
-      "bytes": 9180
+      "bytes": 10281
     },
     {
       "path": "robots.txt",
-      "bytes": 85
+      "bytes": 78
     },
     {
       "path": "sign-in/index.html",
-      "bytes": 4203
+      "bytes": 4414
     },
     {
       "path": "sitemap.xml",
-      "bytes": 111
+      "bytes": 296
     },
     {
       "path": "social-preview.png",
@@ -173,7 +173,7 @@
     },
     {
       "path": "terms/index.html",
-      "bytes": 7201
+      "bytes": 7515
     },
     {
       "path": "url-icon.png",

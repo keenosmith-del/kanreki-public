@@ -1,3 +1,13 @@
+# Current production authorization | 18 November 2026
+
+The owner approved finalized public-site disclosures based on confirmed personal operation and the newly adopted manual retention policy, and separately accepted the existing shared EmailJS configuration without origin allowlisting. Production settings are DEPLOYMENT_ENV=production, SITE_URL=https://kanreki-public.pages.dev, SITE_ORIGIN_VERIFIED=true and NODE_VERSION=24. Shared identifiers and preview environment settings are preserved. No subscription, DNS, custom domain, kailor configuration or shared template change was made.
+
+Legal pages remain noindex by editorial indexing policy after finalization; this does not indicate unapproved content. The lack of a dedicated public responsible-party address is documented against POPIA section 18(1)(b), with the owner’s express direction not to publish a residential address or block technical deployment on this point. No legal-compliance certification is claimed.
+
+Google URL-prefix ownership is verified. Keep public/google5f979766b2c25bff.html. Production release and Search Console results are recorded in the current verification evidence; prior deployment history follows below.
+
+---
+
 # kanreki | independent Cloudflare Pages deployment
 
 Repository: `keenosmith-del/kanreki-public`. The independent **GitHub-connected** Pages project `kanreki-public` now exists in the account verified against the existing kailor zone and Pages project. Its actual assigned and HTTPS-verified stable origin is **https://kanreki-public.pages.dev**. The initial Git-source build successfully deployed approved commit `16177fd83fe8df79fa31a34a842ef9abe46f2cc6` and is deliberately **noindex** while release reviews remain pending. No custom domain was configured or purchased.
